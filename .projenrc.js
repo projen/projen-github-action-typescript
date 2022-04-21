@@ -9,6 +9,9 @@ const project = new cdk.JsiiProject({
   deps: ['projen'],
   devDeps: ['fs-extra', '@types/fs-extra', 'glob'],
   peerDeps: ['projen'],
+
+  autoApproveUpgrades: true,
+  autoApproveOptions: { allowedUsernames: ['cdklabs-automation'] },
 });
 
 project.synth();
