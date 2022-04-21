@@ -1,5 +1,5 @@
 {
-  "name": "@projen/projen-github-action-typescript",
+  "name": "projen-github-action-typescript",
   "repository": {
     "type": "git",
     "url": "https://github.com/projen/projen-github-action-typescript.git"
