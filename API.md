@@ -805,6 +805,7 @@ const gitHubActionTypeScriptOptions: GitHubActionTypeScriptOptions = { ... }
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.actionMetadata">actionMetadata</a></code> | <code><a href="#projen-github-action-typescript.GitHubActionMetadata">GitHubActionMetadata</a></code> | Options for the GitHub Action metadata stored in `action.yml`. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.manageEntryFiles">manageEntryFiles</a></code> | <code>boolean</code> | Let Projen manage index.ts and action-options.ts source code. |
 
 ---
 
@@ -2641,6 +2642,19 @@ Options for the GitHub Action metadata stored in `action.yml`.
 
 ---
 
+##### `manageEntryFiles`<sup>Optional</sup> <a name="manageEntryFiles" id="projen-github-action-typescript.GitHubActionTypeScriptOptions.property.manageEntryFiles"></a>
+
+```typescript
+public readonly manageEntryFiles: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Let Projen manage index.ts and action-options.ts source code.
+
+---
+
 ### Input <a name="Input" id="projen-github-action-typescript.Input"></a>
 
 Define an input to a GitHub Action.
@@ -2661,6 +2675,7 @@ const input: Input = { ... }
 | <code><a href="#projen-github-action-typescript.Input.property.default">default</a></code> | <code>string</code> | The default value when the input parameter is not specified in the workflow file. |
 | <code><a href="#projen-github-action-typescript.Input.property.deprecationMessage">deprecationMessage</a></code> | <code>string</code> | If this parameter is set, it will be logged as a warning message if the input parameter is used. |
 | <code><a href="#projen-github-action-typescript.Input.property.required">required</a></code> | <code>boolean</code> | Indicate whether the action requires the input parameter. |
+| <code><a href="#projen-github-action-typescript.Input.property.type">type</a></code> | <code><a href="#projen-github-action-typescript.Type">Type</a></code> | PROJEN ONLY: Specify the type of input. |
 
 ---
 
@@ -2713,6 +2728,22 @@ public readonly required: boolean;
 - *Default:* false
 
 Indicate whether the action requires the input parameter.
+
+---
+
+##### `type`<sup>Optional</sup> <a name="type" id="projen-github-action-typescript.Input.property.type"></a>
+
+```typescript
+public readonly type: Type;
+```
+
+- *Type:* <a href="#projen-github-action-typescript.Type">Type</a>
+- *Default:* Type.STRING
+
+PROJEN ONLY: Specify the type of input.
+
+This will be used to
+generate sample code, and is not part of GitHub Input Syntax.
 
 ---
 
@@ -3487,6 +3518,7 @@ The command to execute.
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.actionMetadata">actionMetadata</a></code> | <code><a href="#projen-github-action-typescript.GitHubActionMetadata">GitHubActionMetadata</a></code> | *No description.* |
 
 ---
 
@@ -4188,6 +4220,16 @@ public readonly tsconfigEslint: TypescriptConfig;
 
 ---
 
+##### `actionMetadata`<sup>Required</sup> <a name="actionMetadata" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.actionMetadata"></a>
+
+```typescript
+public readonly actionMetadata: GitHubActionMetadata;
+```
+
+- *Type:* <a href="#projen-github-action-typescript.GitHubActionMetadata">GitHubActionMetadata</a>
+
+---
+
 #### Constants <a name="Constants" id="Constants"></a>
 
 | **Name** | **Type** | **Description** |
@@ -4253,6 +4295,45 @@ The GitHub Action runtime or composite/docker identifier.
 ##### `DOCKER` <a name="DOCKER" id="projen-github-action-typescript.RunsUsing.DOCKER"></a>
 
 "docker".
+
+---
+
+
+### Type <a name="Type" id="projen-github-action-typescript.Type"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#projen-github-action-typescript.Type.STRING">STRING</a></code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.Type.NUMBER">NUMBER</a></code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.Type.STRING_LIST">STRING_LIST</a></code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.Type.NUMBER_LIST">NUMBER_LIST</a></code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.Type.JSON">JSON</a></code> | *No description.* |
+
+---
+
+##### `STRING` <a name="STRING" id="projen-github-action-typescript.Type.STRING"></a>
+
+---
+
+
+##### `NUMBER` <a name="NUMBER" id="projen-github-action-typescript.Type.NUMBER"></a>
+
+---
+
+
+##### `STRING_LIST` <a name="STRING_LIST" id="projen-github-action-typescript.Type.STRING_LIST"></a>
+
+---
+
+
+##### `NUMBER_LIST` <a name="NUMBER_LIST" id="projen-github-action-typescript.Type.NUMBER_LIST"></a>
+
+---
+
+
+##### `JSON` <a name="JSON" id="projen-github-action-typescript.Type.JSON"></a>
 
 ---
 

@@ -1,6 +1,6 @@
-import { GitHubActionTypeScriptProject } from '../src';
-import { RunsUsing } from '../src/model/actions-metadata-model';
-import { synthSnapshot } from './util';
+import { Testing } from 'projen';
+import { GitHubActionTypeScriptOptions, GitHubActionTypeScriptProject } from '../src';
+import { RunsUsing, Type } from '../src/model/actions-metadata-model';
 
 describe('GitHubActionTypeScriptProject', () => {
   test('default action metadata', () => {
@@ -9,7 +9,8 @@ describe('GitHubActionTypeScriptProject', () => {
       defaultReleaseBranch: 'main',
     });
 
-    const workflow = synthSnapshot(project)['action.yml'];
+    const snapshot = Testing.synth(project);
+    const workflow = snapshot['action.yml'];
     expect(workflow).toContain(
       'runs:\n  using: node16\n  main: dist/index.js',
     );
@@ -37,7 +38,8 @@ describe('GitHubActionTypeScriptProject', () => {
       },
     });
 
-    const workflow = synthSnapshot(project)['action.yml'];
+    const snapshot = Testing.synth(project);
+    const workflow = snapshot['action.yml'];
     expect(workflow).toContain(
       'runs:\n  using: node12\n  main: dist/index.js',
     );
@@ -45,4 +47,87 @@ describe('GitHubActionTypeScriptProject', () => {
       'inputs:\n  input1:\n    description: my first input',
     );
   });
+
+  describe('source code', () => {
+    test('default source code', () => {
+      const project = sampleProject();
+
+      const snapshot = Testing.synth(project);
+      const generatedIndex = snapshot['src/index.ts'];
+      expect(generatedIndex).toMatchSnapshot();
+      const generatedActionOptions = snapshot['src/action-options.ts'];
+      expect(generatedActionOptions).toMatchSnapshot();
+      const generatedAction = snapshot['src/action.ts'];
+      expect(generatedAction).toMatchSnapshot();
+    });
+
+    test('refuse projen managed source code', () => {
+      const project = sampleProject({
+        manageEntryFiles: false,
+      });
+
+      // same sample code, but not projen managed
+      const snapshot = Testing.synth(project);
+      const generatedIndex = snapshot['src/index.ts'];
+      expect(generatedIndex).toMatchSnapshot();
+      const generatedActionOptions = snapshot['src/action-options.ts'];
+      expect(generatedActionOptions).toMatchSnapshot();
+      const generatedAction = snapshot['src/action.ts'];
+      expect(generatedAction).toMatchSnapshot();
+    });
+
+    test('refuse sample code altogether', () => {
+      const project = sampleProject({
+        sampleCode: false,
+        manageEntryFiles: false,
+      });
+
+      // no sample code generated
+      const snapshot = Testing.synth(project);
+      expect(snapshot['src/index.ts']).toBeUndefined();
+      expect(snapshot['src/action.ts']).toBeUndefined();
+      expect(snapshot['src/action-options.ts']).toBeUndefined();
+    });
+  });
 });
+
+function sampleProject(overrides: Partial<GitHubActionTypeScriptOptions> = {}): GitHubActionTypeScriptProject {
+  return new GitHubActionTypeScriptProject({
+    name: 'test',
+    defaultReleaseBranch: 'main',
+    actionMetadata: {
+      runs: {
+        using: RunsUsing.NODE_12,
+        main: 'dist/index.js',
+      },
+      inputs: {
+        input1: {
+          description: 'my first input',
+          required: true,
+          type: Type.STRING,
+        },
+        input2: {
+          description: 'my second input',
+          default: '0',
+          type: Type.NUMBER,
+        },
+        input3: {
+          description: 'my third input',
+          default: '[first,second]',
+          type: Type.STRING_LIST,
+        },
+        input4: {
+          description: 'my fourth input',
+          required: true,
+          type: Type.NUMBER_LIST,
+        },
+        input5: {
+          description: 'my fifth input',
+          default: '{}',
+          type: Type.JSON,
+        },
+      },
+    },
+    ...overrides,
+  });
+}
