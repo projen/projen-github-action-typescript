@@ -21,7 +21,21 @@ export interface GitHubActionTypeScriptOptions extends typescript.TypeScriptProj
    *
    * @default true
    */
-  readonly manageEntryFiles?: boolean;
+  readonly manageOptionsFile?: boolean;
+
+  /**
+   * The name of your action. This will get used in code generation.
+   * For example,
+   *
+   * ```ts
+   * export interface <actionName>Options {
+   *   readonly token: string;
+   * }
+   * ```
+   *
+   * @default - same as the name of your project
+   */
+  readonly actionName?: string;
 }
 
 /**
@@ -31,12 +45,15 @@ export interface GitHubActionTypeScriptOptions extends typescript.TypeScriptProj
  */
 export class GitHubActionTypeScriptProject extends typescript.TypeScriptProject {
   public actionMetadata: GitHubActionMetadata;
+  public actionName: string;
 
   constructor(options: GitHubActionTypeScriptOptions) {
     super({
       ...options,
       sampleCode: false,
     });
+
+    this.actionName = options.actionName ?? this.name;
 
     // standard GitHub action packages
     this.addDeps('@actions/core', '@actions/github');
@@ -70,16 +87,14 @@ export class GitHubActionTypeScriptProject extends typescript.TypeScriptProject 
 
     if (options.sampleCode ?? true) {
       // If you don't let projen manage files for you, we'll still add it as sample code
-      new SampleCode(this, !options.manageEntryFiles);
+      new SampleCode(this, !options.manageOptionsFile);
     }
 
-    // Let projen manage index.ts and action-options.ts files for you
-    if (options.manageEntryFiles ?? true) {
+    // Let projen manage options.generated.ts for you
+    if (options.manageOptionsFile ?? true) {
       const source = new GitHubActionSourceCode(this);
-      const indexSrc = new SourceCode(this, path.join(this.srcdir, 'index.ts'));
-      const actionOptionsSrc = new SourceCode(this, path.join(this.srcdir, 'action-options.ts'));
-      renderSource(indexSrc, source.indexCode);
-      renderSource(actionOptionsSrc, source.actionOptionsCode);
+      const actionOptionsSrc = new SourceCode(this, path.join(this.srcdir, 'options.generated.ts'));
+      renderSource(actionOptionsSrc, source.generatedOptionsCode);
     }
   }
 }

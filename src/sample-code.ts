@@ -3,38 +3,36 @@ import { GitHubActionTypeScriptProject } from './project';
 import { GitHubActionSourceCode } from './source-code';
 
 export class SampleCode extends Component {
-  constructor(project: GitHubActionTypeScriptProject, additionalFiles?: boolean) {
+  constructor(project: GitHubActionTypeScriptProject, optionsFile?: boolean) {
     super(project);
 
-    const actionCode = [
-      '// import * as github from \'@actions/github\';',
-      'import { ActionManagerOptions } from \'./action-options\';',
+    const indexCode = [
+      'import * as core from \'@actions/core\';',
+      'import { loadActionOptions } from \'./options.generated.ts\';',
       '',
-      'export class ActionManager {',
-      '',
-      '  constructor(options: ActionManagerOptions) {',
-      '    console.log(options);',
-      '  }',
-      '',
-      '  main() {',
-      '    // this is your action\'s entrypoint',
-      '  }',
+      'async function run() {',
+      '  const options = loadActionOptions();',
+      '  console.log(options);',
       '}',
+      '',
+      'run().catch(error => {',
+      '  core.setFailed(error.message);',
+      '});',
+      '',
     ].join('\n');
 
-    if (additionalFiles) {
+    if (optionsFile) {
       const sourceCode = new GitHubActionSourceCode(project);
       new SampleDir(project, project.srcdir, {
         files: {
-          'action.ts': actionCode,
-          'index.ts': sourceCode.indexCode.join('\n'),
-          'action-options.ts': sourceCode.actionOptionsCode.join('\n'),
+          'index.ts': indexCode,
+          'options.generated.ts': sourceCode.generatedOptionsCode.join('\n'),
         },
       });
     } else {
       new SampleDir(project, project.srcdir, {
         files: {
-          'action.ts': actionCode,
+          'index.ts': indexCode,
         },
       });
     }

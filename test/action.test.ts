@@ -55,38 +55,33 @@ describe('GitHubActionTypeScriptProject', () => {
       const snapshot = Testing.synth(project);
       const generatedIndex = snapshot['src/index.ts'];
       expect(generatedIndex).toMatchSnapshot();
-      const generatedActionOptions = snapshot['src/action-options.ts'];
+      const generatedActionOptions = snapshot['src/options.generated.ts'];
       expect(generatedActionOptions).toMatchSnapshot();
-      const generatedAction = snapshot['src/action.ts'];
-      expect(generatedAction).toMatchSnapshot();
     });
 
     test('refuse projen managed source code', () => {
       const project = sampleProject({
-        manageEntryFiles: false,
+        manageOptionsFile: false,
       });
 
       // same sample code, but not projen managed
       const snapshot = Testing.synth(project);
       const generatedIndex = snapshot['src/index.ts'];
       expect(generatedIndex).toMatchSnapshot();
-      const generatedActionOptions = snapshot['src/action-options.ts'];
+      const generatedActionOptions = snapshot['src/options.generated.ts'];
       expect(generatedActionOptions).toMatchSnapshot();
-      const generatedAction = snapshot['src/action.ts'];
-      expect(generatedAction).toMatchSnapshot();
     });
 
     test('refuse sample code altogether', () => {
       const project = sampleProject({
         sampleCode: false,
-        manageEntryFiles: false,
+        manageOptionsFile: false,
       });
 
       // no sample code generated
       const snapshot = Testing.synth(project);
       expect(snapshot['src/index.ts']).toBeUndefined();
-      expect(snapshot['src/action.ts']).toBeUndefined();
-      expect(snapshot['src/action-options.ts']).toBeUndefined();
+      expect(snapshot['src/options.generated.ts']).toBeUndefined();
     });
   });
 });

@@ -14,7 +14,6 @@ interface PropType {
 export class GitHubActionSourceCode extends Component {
   private includeListFunction = false;
   private includeNumberFunction = false;
-  private includeOptionalFunction = false;
   private properties: Record<string, PropType> = {};
 
   /**
@@ -40,7 +39,6 @@ export class GitHubActionSourceCode extends Component {
       ...this.getInputs(indent(2)),
       '  };',
       '}',
-      ...renderOptionalFunction(this.includeOptionalFunction),
       ...renderListFunction(this.includeListFunction),
       ...renderNumberFunction(this.includeNumberFunction),
     ];
@@ -61,44 +59,34 @@ export class GitHubActionSourceCode extends Component {
 
   private getInputs(ind: string): string[] {
     const result = [];
-    for (const [key, { name, type, required }] of Object.entries(this.properties)) {
-      result.push(`${ind}${name}: ${this.getTypedInput(type, key, required)},`);
+    for (const [key, { name, type }] of Object.entries(this.properties)) {
+      result.push(`${ind}${name}: ${this.getTypedInput(type, key)},`);
     }
     return result;
   }
 
-  private getTypedInput(type: Type, key: string, optional: boolean): string {
-    let input: string = '';
+  private getTypedInput(type: Type, key: string): string {
+    let core = `core.getInput('${key}')`;
+
     switch (type) {
       case Type.STRING: {
-        input = `core.getInput('${key}')`;
-        break;
+        return core;
       }
       case Type.NUMBER: {
-        input = `Number(core.getInput('${key}'))`;
-        break;
+        return `Number(${core})`;
       }
       case Type.STRING_LIST: {
         this.includeListFunction = true;
-        input = `${LIST_FUNCTION}(core.getInput('${key}'))`;
-        break;
+        return `${LIST_FUNCTION}(${core})`;
       }
       case Type.NUMBER_LIST: {
         this.includeNumberFunction = true;
-        input = `${NUMBER_FUNCTION}(${LIST_FUNCTION}(core.getInput('${key}')))`;
-        break;
+        return `${NUMBER_FUNCTION}(${LIST_FUNCTION}(${core}))`;
       }
       case Type.JSON: {
-        input = `JSON.parse(core.getInput('${key}'))`;
-        break;
+        return `JSON.parse(${core})`;
       }
     }
-
-    if (optional) {
-      this.includeOptionalFunction = true;
-      input = `${OPTIONAL_FUNCTION}(${input})`;
-    }
-    return input;
   }
 
   private renderOptions(ind: string): string[] {
@@ -137,17 +125,6 @@ function sanitize(name: string): string {
   return words.join('');
 }
 
-const OPTIONAL_FUNCTION = 'makeOptional';
-function renderOptionalFunction(include: boolean): string[] {
-  if (!include) { return []; }
-  return [
-    '',
-    `function ${OPTIONAL_FUNCTION}(input: string): string | undefined {`,
-    '  return input !== \'\' ? input : undefined;',
-    '}',
-  ];
-}
-
 const LIST_FUNCTION = 'renderListInput';
 function renderListFunction(include: boolean): string[] {
   if (!include) { return []; }
@@ -164,7 +141,7 @@ function renderListFunction(include: boolean): string[] {
   ];
 }
 
-const NUMBER_FUNCTION = 'toNumber';
+const NUMBER_FUNCTION = 'toNumberList';
 function renderNumberFunction(include: boolean): string[] {
   if (!include) { return []; }
   return [
