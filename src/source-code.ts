@@ -14,47 +14,35 @@ interface PropType {
 export class GitHubActionSourceCode extends Component {
   private includeListFunction = false;
   private includeNumberFunction = false;
+  private includeOptionalFunction = false;
   private properties: Record<string, PropType> = {};
 
   /**
-   * Code for index.ts
+   * Code for options.generated.ts
    */
-  public indexCode: string[];
-
-  /**
-   * Code for action-options.ts
-   */
-  public actionOptionsCode: string[];
+  public generatedOptionsCode: string[];
 
   constructor(project: GitHubActionTypeScriptProject) {
     super(project);
 
     this.getProperties(project.actionMetadata);
 
-    this.indexCode = [
+    const optionsInterface = `${project.actionName}Options`;
+    this.generatedOptionsCode = [
       'import * as core from \'@actions/core\';',
-      'import { ActionManager } from \'./action\';',
       '',
-      'async function run() {',
-      ...this.getInputs(indent(1)),
-      '  const action = new ActionManager({',
-      ...this.renderProperties(indent(2)),
-      '  });',
-      '',
-      '  await action.main();',
-      '}',
-      ...renderListFunction(this.includeListFunction),
-      ...renderNumberFunction(this.includeNumberFunction),
-      '',
-      'run().catch(error => {',
-      '  core.setFailed(error.message);',
-      '});',
-    ];
-
-    this.actionOptionsCode = [
-      'export interface ActionManagerOptions {',
+      `export interface ${optionsInterface} {`,
       ...this.renderOptions(indent(1)),
       '}',
+      '',
+      `export function loadActionOptions(): ${optionsInterface} {`,
+      '  return {',
+      ...this.getInputs(indent(2)),
+      '  };',
+      '}',
+      ...renderOptionalFunction(this.includeOptionalFunction),
+      ...renderListFunction(this.includeListFunction),
+      ...renderNumberFunction(this.includeNumberFunction),
     ];
 
   }
@@ -71,42 +59,46 @@ export class GitHubActionSourceCode extends Component {
     }
   }
 
-  private renderProperties(ind: string): string[] {
-    const renderedProps = [];
-    for (const { name } of Object.values(this.properties)) {
-      renderedProps.push(`${ind}${name},`);
-    }
-    return renderedProps;
-  }
-
   private getInputs(ind: string): string[] {
     const result = [];
-    for (const [key, { name, type }] of Object.entries(this.properties)) {
-      result.push(`${ind}const ${name}: ${type} = ${this.getTypedInput(type, key)};`);
+    for (const [key, { name, type, required }] of Object.entries(this.properties)) {
+      result.push(`${ind}${name}: ${this.getTypedInput(type, key, required)},`);
     }
     return result;
   }
 
-  private getTypedInput(type: Type, key: string): string {
+  private getTypedInput(type: Type, key: string, optional: boolean): string {
+    let input: string = '';
     switch (type) {
       case Type.STRING: {
-        return `core.getInput('${key}')`;
+        input = `core.getInput('${key}')`;
+        break;
       }
       case Type.NUMBER: {
-        return `Number(core.getInput('${key}'))`;
+        input = `Number(core.getInput('${key}'))`;
+        break;
       }
       case Type.STRING_LIST: {
         this.includeListFunction = true;
-        return `${LIST_FUNCTION}(core.getInput('${key}'))`;
+        input = `${LIST_FUNCTION}(core.getInput('${key}'))`;
+        break;
       }
       case Type.NUMBER_LIST: {
         this.includeNumberFunction = true;
-        return `${NUMBER_FUNCTION}(${LIST_FUNCTION}(core.getInput('${key}')))`;
+        input = `${NUMBER_FUNCTION}(${LIST_FUNCTION}(core.getInput('${key}')))`;
+        break;
       }
       case Type.JSON: {
-        return `JSON.parse(core.getInput('${key}'))`;
+        input = `JSON.parse(core.getInput('${key}'))`;
+        break;
       }
     }
+
+    if (optional) {
+      this.includeOptionalFunction = true;
+      input = `${OPTIONAL_FUNCTION}(${input})`;
+    }
+    return input;
   }
 
   private renderOptions(ind: string): string[] {
@@ -143,6 +135,17 @@ function sanitize(name: string): string {
     words[i].charAt(0).toLocaleUpperCase();
   }
   return words.join('');
+}
+
+const OPTIONAL_FUNCTION = 'makeOptional';
+function renderOptionalFunction(include: boolean): string[] {
+  if (!include) { return []; }
+  return [
+    '',
+    `function ${OPTIONAL_FUNCTION}(input: string): string | undefined {`,
+    '  return input !== \'\' ? input : undefined;',
+    '}',
+  ];
 }
 
 const LIST_FUNCTION = 'renderListInput';
