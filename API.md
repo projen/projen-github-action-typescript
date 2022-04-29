@@ -805,7 +805,8 @@ const gitHubActionTypeScriptOptions: GitHubActionTypeScriptOptions = { ... }
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.actionMetadata">actionMetadata</a></code> | <code><a href="#projen-github-action-typescript.GitHubActionMetadata">GitHubActionMetadata</a></code> | Options for the GitHub Action metadata stored in `action.yml`. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.manageEntryFiles">manageEntryFiles</a></code> | <code>boolean</code> | Let Projen manage index.ts and action-options.ts source code. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.actionName">actionName</a></code> | <code>string</code> | The name of your action. This will get used in code generation. For example,. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.manageOptionsFile">manageOptionsFile</a></code> | <code>boolean</code> | Let Projen manage index.ts and action-options.ts source code. |
 
 ---
 
@@ -2642,10 +2643,29 @@ Options for the GitHub Action metadata stored in `action.yml`.
 
 ---
 
-##### `manageEntryFiles`<sup>Optional</sup> <a name="manageEntryFiles" id="projen-github-action-typescript.GitHubActionTypeScriptOptions.property.manageEntryFiles"></a>
+##### `actionName`<sup>Optional</sup> <a name="actionName" id="projen-github-action-typescript.GitHubActionTypeScriptOptions.property.actionName"></a>
 
 ```typescript
-public readonly manageEntryFiles: boolean;
+public readonly actionName: string;
+```
+
+- *Type:* string
+- *Default:* same as the name of your project
+
+The name of your action. This will get used in code generation. For example,.
+
+```ts
+export interface <actionName>Options {
+   readonly token: string;
+}
+```
+
+---
+
+##### `manageOptionsFile`<sup>Optional</sup> <a name="manageOptionsFile" id="projen-github-action-typescript.GitHubActionTypeScriptOptions.property.manageOptionsFile"></a>
+
+```typescript
+public readonly manageOptionsFile: boolean;
 ```
 
 - *Type:* boolean
@@ -3519,6 +3539,7 @@ The command to execute.
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.actionMetadata">actionMetadata</a></code> | <code><a href="#projen-github-action-typescript.GitHubActionMetadata">GitHubActionMetadata</a></code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.actionName">actionName</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -4227,6 +4248,16 @@ public readonly actionMetadata: GitHubActionMetadata;
 ```
 
 - *Type:* <a href="#projen-github-action-typescript.GitHubActionMetadata">GitHubActionMetadata</a>
+
+---
+
+##### `actionName`<sup>Required</sup> <a name="actionName" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.actionName"></a>
+
+```typescript
+public readonly actionName: string;
+```
+
+- *Type:* string
 
 ---
 
