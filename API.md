@@ -2933,6 +2933,7 @@ new GitHubActionTypeScriptProject(options: GitHubActionTypeScriptOptions)
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addBins">addBins</a></code> | *No description.* |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
@@ -3182,6 +3183,25 @@ Finds an object file (like JsonFile, YamlFile, etc.) by name.
 - *Type:* string
 
 The file path.
+
+---
+
+##### `tryRemoveFile` <a name="tryRemoveFile" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryRemoveFile"></a>
+
+```typescript
+public tryRemoveFile(filePath: string): FileBase
+```
+
+Finds a file at the specified relative path within this project and removes it.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryRemoveFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+If this path is relative, it will be
+resolved from the root of _this_ project.
 
 ---
 
