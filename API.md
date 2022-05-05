@@ -683,6 +683,8 @@ const gitHubActionTypeScriptOptions: GitHubActionTypeScriptOptions = { ... }
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.projenCommand">projenCommand</a></code> | <code>string</code> | The shell command to use in order to run the projen CLI. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.projenrcJson">projenrcJson</a></code> | <code>boolean</code> | Generate (once) .projenrc.json (in JSON). Set to `false` in order to disable .projenrc.json generation. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.projenrcJsonOptions">projenrcJsonOptions</a></code> | <code>projen.ProjenrcOptions</code> | Options for .projenrc.json. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.renovatebot">renovatebot</a></code> | <code>boolean</code> | Use renovatebot to handle dependency upgrades. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.renovatebotOptions">renovatebotOptions</a></code> | <code>projen.RenovatebotOptions</code> | Options for renovatebot. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.autoApproveOptions">autoApproveOptions</a></code> | <code>projen.github.AutoApproveOptions</code> | Enable and configure the 'auto approve' workflow. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
@@ -903,6 +905,32 @@ public readonly projenrcJsonOptions: ProjenrcOptions;
 - *Default:* default options
 
 Options for .projenrc.json.
+
+---
+
+##### `renovatebot`<sup>Optional</sup> <a name="renovatebot" id="projen-github-action-typescript.GitHubActionTypeScriptOptions.property.renovatebot"></a>
+
+```typescript
+public readonly renovatebot: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Use renovatebot to handle dependency upgrades.
+
+---
+
+##### `renovatebotOptions`<sup>Optional</sup> <a name="renovatebotOptions" id="projen-github-action-typescript.GitHubActionTypeScriptOptions.property.renovatebotOptions"></a>
+
+```typescript
+public readonly renovatebotOptions: RenovatebotOptions;
+```
+
+- *Type:* projen.RenovatebotOptions
+- *Default:* default options
+
+Options for renovatebot.
 
 ---
 
