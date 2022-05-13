@@ -44,8 +44,8 @@ export interface GitHubActionTypeScriptOptions extends typescript.TypeScriptProj
  * @pjid github-action-ts
  */
 export class GitHubActionTypeScriptProject extends typescript.TypeScriptProject {
-  public actionMetadata: GitHubActionMetadata;
-  public actionName: string;
+  public readonly actionMetadata: GitHubActionMetadata;
+  public readonly actionName: string;
 
   constructor(options: GitHubActionTypeScriptOptions) {
     super({
