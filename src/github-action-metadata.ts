@@ -12,7 +12,7 @@ export enum Type {
   NUMBER = 'number',
   STRING_LIST = 'string[]',
   NUMBER_LIST = 'number[]',
-  JSON = 'Record<string,string>',
+  JSON = 'Record<string, string>',
 }
 
 export interface ProjenInput extends Input {

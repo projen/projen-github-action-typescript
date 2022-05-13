@@ -109,7 +109,7 @@ function sampleProject(overrides: Partial<GitHubActionTypeScriptOptions> = {}): 
         },
         input3: {
           description: 'my third input',
-          default: '[first,second]',
+          default: '[first, second]',
           type: Type.STRING_LIST,
         },
         input4: {

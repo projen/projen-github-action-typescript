@@ -1,6 +1,5 @@
 export function upperCase(input: string): string {
   const wordList = splitWords();
-  console.log(wordList);
   for (let i = 0; i < wordList.length; i++) {
     wordList[i] = wordList[i][0].toLocaleUpperCase() + wordList[i].slice(1);
   }
