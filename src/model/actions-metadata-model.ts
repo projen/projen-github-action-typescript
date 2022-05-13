@@ -91,22 +91,6 @@ export interface Input {
    * @default - none
    */
   readonly deprecationMessage?: string;
-
-  /**
-   * PROJEN ONLY: Specify the type of input. This will be used to
-   * generate sample code, and is not part of GitHub Input Syntax.
-   *
-   * @default Type.STRING
-   */
-  readonly type?: Type;
-}
-
-export enum Type {
-  STRING = 'string',
-  NUMBER = 'number',
-  STRING_LIST = 'string[]',
-  NUMBER_LIST = 'number[]',
-  JSON = 'Record<string,string>',
 }
 
 /**

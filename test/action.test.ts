@@ -1,6 +1,7 @@
 import { Testing } from 'projen';
-import { GitHubActionTypeScriptOptions, GitHubActionTypeScriptProject } from '../src';
-import { RunsUsing, Type } from '../src/model/actions-metadata-model';
+import { Type } from '../src/github-action-metadata';
+import { RunsUsing } from '../src/model/actions-metadata-model';
+import { GitHubActionTypeScriptOptions, GitHubActionTypeScriptProject } from '../src/project';
 
 describe('GitHubActionTypeScriptProject', () => {
   test('default action metadata', () => {

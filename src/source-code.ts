@@ -1,6 +1,5 @@
 import { Component } from 'projen';
-import { GitHubActionMetadata } from './github-action-metadata';
-import { Type } from './model/actions-metadata-model';
+import { GitHubActionMetadata, Type } from './github-action-metadata';
 import { GitHubActionTypeScriptProject } from './project';
 
 interface PropType {

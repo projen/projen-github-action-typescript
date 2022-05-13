@@ -7,6 +7,24 @@ import {
   Branding,
 } from './model/actions-metadata-model';
 
+export enum Type {
+  STRING = 'string',
+  NUMBER = 'number',
+  STRING_LIST = 'string[]',
+  NUMBER_LIST = 'number[]',
+  JSON = 'Record<string,string>',
+}
+
+export interface ProjenInput extends Input {
+  /**
+   * PROJEN ONLY: Specify the type of input. This will be used to
+   * generate sample code, and is not part of GitHub Input Syntax.
+   *
+   * @default Type.STRING
+   */
+  readonly type?: Type;
+}
+
 /**
  * A Github Action Metadata file definition.
  */
@@ -40,7 +58,7 @@ export interface GitHubActionMetadata {
    *
    * @default {}
    */
-  readonly inputs?: Record<string, Input>;
+  readonly inputs?: Record<string, ProjenInput>;
 
   /**
    * Output parameters allow you to declare data that an action sets. This is
