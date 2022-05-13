@@ -544,7 +544,7 @@ const gitHubActionMetadata: GitHubActionMetadata = { ... }
 | <code><a href="#projen-github-action-typescript.GitHubActionMetadata.property.author">author</a></code> | <code>string</code> | The name of the action's author. |
 | <code><a href="#projen-github-action-typescript.GitHubActionMetadata.property.branding">branding</a></code> | <code><a href="#projen-github-action-typescript.Branding">Branding</a></code> | You can use a color and a Feather icon to create a badge to personalize and distinguish your action. |
 | <code><a href="#projen-github-action-typescript.GitHubActionMetadata.property.description">description</a></code> | <code>string</code> | A short description of the action. |
-| <code><a href="#projen-github-action-typescript.GitHubActionMetadata.property.inputs">inputs</a></code> | <code>{[ key: string ]: <a href="#projen-github-action-typescript.Input">Input</a>}</code> | Input parameters allow you to specify data that the action expects to use during runtime. |
+| <code><a href="#projen-github-action-typescript.GitHubActionMetadata.property.inputs">inputs</a></code> | <code>{[ key: string ]: <a href="#projen-github-action-typescript.ProjenInput">ProjenInput</a>}</code> | Input parameters allow you to specify data that the action expects to use during runtime. |
 | <code><a href="#projen-github-action-typescript.GitHubActionMetadata.property.name">name</a></code> | <code>string</code> | The name of your action. |
 | <code><a href="#projen-github-action-typescript.GitHubActionMetadata.property.outputs">outputs</a></code> | <code>{[ key: string ]: <a href="#projen-github-action-typescript.Output">Output</a>}</code> | Output parameters allow you to declare data that an action sets. |
 
@@ -609,10 +609,10 @@ A short description of the action.
 ##### `inputs`<sup>Optional</sup> <a name="inputs" id="projen-github-action-typescript.GitHubActionMetadata.property.inputs"></a>
 
 ```typescript
-public readonly inputs: {[ key: string ]: Input};
+public readonly inputs: {[ key: string ]: ProjenInput};
 ```
 
-- *Type:* {[ key: string ]: <a href="#projen-github-action-typescript.Input">Input</a>}
+- *Type:* {[ key: string ]: <a href="#projen-github-action-typescript.ProjenInput">ProjenInput</a>}
 - *Default:* {}
 
 Input parameters allow you to specify data that the action expects to use during runtime.
@@ -2695,7 +2695,6 @@ const input: Input = { ... }
 | <code><a href="#projen-github-action-typescript.Input.property.default">default</a></code> | <code>string</code> | The default value when the input parameter is not specified in the workflow file. |
 | <code><a href="#projen-github-action-typescript.Input.property.deprecationMessage">deprecationMessage</a></code> | <code>string</code> | If this parameter is set, it will be logged as a warning message if the input parameter is used. |
 | <code><a href="#projen-github-action-typescript.Input.property.required">required</a></code> | <code>boolean</code> | Indicate whether the action requires the input parameter. |
-| <code><a href="#projen-github-action-typescript.Input.property.type">type</a></code> | <code><a href="#projen-github-action-typescript.Type">Type</a></code> | PROJEN ONLY: Specify the type of input. |
 
 ---
 
@@ -2748,22 +2747,6 @@ public readonly required: boolean;
 - *Default:* false
 
 Indicate whether the action requires the input parameter.
-
----
-
-##### `type`<sup>Optional</sup> <a name="type" id="projen-github-action-typescript.Input.property.type"></a>
-
-```typescript
-public readonly type: Type;
-```
-
-- *Type:* <a href="#projen-github-action-typescript.Type">Type</a>
-- *Default:* Type.STRING
-
-PROJEN ONLY: Specify the type of input.
-
-This will be used to
-generate sample code, and is not part of GitHub Input Syntax.
 
 ---
 
@@ -2937,6 +2920,96 @@ The value that the output parameter will be mapped to.
 
 This property is required if you are using composite actions,
 and must be omitted otherwise.
+
+---
+
+### ProjenInput <a name="ProjenInput" id="projen-github-action-typescript.ProjenInput"></a>
+
+#### Initializer <a name="Initializer" id="projen-github-action-typescript.ProjenInput.Initializer"></a>
+
+```typescript
+import { ProjenInput } from 'projen-github-action-typescript'
+
+const projenInput: ProjenInput = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#projen-github-action-typescript.ProjenInput.property.description">description</a></code> | <code>string</code> | A description of the input parameter. |
+| <code><a href="#projen-github-action-typescript.ProjenInput.property.default">default</a></code> | <code>string</code> | The default value when the input parameter is not specified in the workflow file. |
+| <code><a href="#projen-github-action-typescript.ProjenInput.property.deprecationMessage">deprecationMessage</a></code> | <code>string</code> | If this parameter is set, it will be logged as a warning message if the input parameter is used. |
+| <code><a href="#projen-github-action-typescript.ProjenInput.property.required">required</a></code> | <code>boolean</code> | Indicate whether the action requires the input parameter. |
+| <code><a href="#projen-github-action-typescript.ProjenInput.property.type">type</a></code> | <code><a href="#projen-github-action-typescript.Type">Type</a></code> | PROJEN ONLY: Specify the type of input. |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="projen-github-action-typescript.ProjenInput.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+A description of the input parameter.
+
+---
+
+##### `default`<sup>Optional</sup> <a name="default" id="projen-github-action-typescript.ProjenInput.property.default"></a>
+
+```typescript
+public readonly default: string;
+```
+
+- *Type:* string
+
+The default value when the input parameter is not specified in the workflow file.
+
+This is required if `required=true`.
+
+---
+
+##### `deprecationMessage`<sup>Optional</sup> <a name="deprecationMessage" id="projen-github-action-typescript.ProjenInput.property.deprecationMessage"></a>
+
+```typescript
+public readonly deprecationMessage: string;
+```
+
+- *Type:* string
+- *Default:* none
+
+If this parameter is set, it will be logged as a warning message if the input parameter is used.
+
+---
+
+##### `required`<sup>Optional</sup> <a name="required" id="projen-github-action-typescript.ProjenInput.property.required"></a>
+
+```typescript
+public readonly required: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Indicate whether the action requires the input parameter.
+
+---
+
+##### `type`<sup>Optional</sup> <a name="type" id="projen-github-action-typescript.ProjenInput.property.type"></a>
+
+```typescript
+public readonly type: Type;
+```
+
+- *Type:* <a href="#projen-github-action-typescript.Type">Type</a>
+- *Default:* Type.STRING
+
+PROJEN ONLY: Specify the type of input.
+
+This will be used to
+generate sample code, and is not part of GitHub Input Syntax.
 
 ---
 
