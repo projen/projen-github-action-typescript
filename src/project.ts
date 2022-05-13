@@ -4,6 +4,7 @@ import { GitHubActionMetadata } from './github-action-metadata';
 import { RunsUsing } from './model/actions-metadata-model';
 import { SampleCode } from './sample-code';
 import { GitHubActionSourceCode } from './source-code';
+import { upperCase } from './utils';
 
 /**
  * Properties for creating a GitHubActionTypeScriptProject.
@@ -53,7 +54,7 @@ export class GitHubActionTypeScriptProject extends typescript.TypeScriptProject 
       sampleCode: false,
     });
 
-    this.actionName = options.actionName ?? this.name;
+    this.actionName = upperCase(options.actionName ?? this.name);
 
     // standard GitHub action packages
     this.addDeps('@actions/core', '@actions/github');
