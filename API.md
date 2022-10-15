@@ -706,7 +706,7 @@ const gitHubActionTypeScriptOptions: GitHubActionTypeScriptOptions = { ... }
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.authorName">authorName</a></code> | <code>string</code> | Author's name. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Author's Organization. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.authorUrl">authorUrl</a></code> | <code>string</code> | Author's URL / Website. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.autoDetectBin">autoDetectBin</a></code> | <code>boolean</code> | Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
@@ -1250,7 +1250,7 @@ public readonly authorOrganization: boolean;
 
 - *Type:* boolean
 
-Author's Organization.
+Is the author an organization.
 
 ---
 
@@ -1916,7 +1916,7 @@ public readonly releaseTagPrefix: string;
 ```
 
 - *Type:* string
-- *Default:* no prefix
+- *Default:* "v"
 
 Automatically add the given prefix to release tags. Useful if you are releasing on multiple branches with overlapping version numbers.
 
