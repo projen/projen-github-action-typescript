@@ -1,6 +1,10 @@
-import { typescript, YamlFile } from 'projen';
+import * as path from 'path';
+import { SourceCode, typescript, YamlFile } from 'projen';
 import { GitHubActionMetadata } from './github-action-metadata';
 import { RunsUsing } from './model/actions-metadata-model';
+import { SampleCode } from './sample-code';
+import { GitHubActionSourceCode } from './source-code';
+import { upperCase } from './utils';
 
 /**
  * Properties for creating a GitHubActionTypeScriptProject.
@@ -12,6 +16,27 @@ export interface GitHubActionTypeScriptOptions extends typescript.TypeScriptProj
    * @default - an action named after the project `name` that runs from `dist/index.js`.
    */
   readonly actionMetadata?: GitHubActionMetadata;
+
+  /**
+   * Let Projen manage index.ts and action-options.ts source code.
+   *
+   * @default true
+   */
+  readonly manageOptionsFile?: boolean;
+
+  /**
+   * The name of your action. This will get used in code generation.
+   * For example,
+   *
+   * ```ts
+   * export interface <actionName>Options {
+   *   readonly token: string;
+   * }
+   * ```
+   *
+   * @default - same as the name of your project
+   */
+  readonly actionName?: string;
 }
 
 /**
@@ -20,8 +45,16 @@ export interface GitHubActionTypeScriptOptions extends typescript.TypeScriptProj
  * @pjid github-action-ts
  */
 export class GitHubActionTypeScriptProject extends typescript.TypeScriptProject {
+  public readonly actionMetadata: GitHubActionMetadata;
+  public readonly actionName: string;
+
   constructor(options: GitHubActionTypeScriptOptions) {
-    super(options);
+    super({
+      ...options,
+      sampleCode: false,
+    });
+
+    this.actionName = upperCase(options.actionName ?? this.name);
 
     // standard GitHub action packages
     this.addDeps('@actions/core', '@actions/github');
@@ -44,11 +77,35 @@ export class GitHubActionTypeScriptProject extends typescript.TypeScriptProject 
       },
     };
 
+    this.actionMetadata = {
+      ...defaultMetadataOptions,
+      ...options.actionMetadata,
+    };
+
     new YamlFile(this, 'action.yml', {
-      obj: {
-        ...defaultMetadataOptions,
-        ...options.actionMetadata,
-      },
+      obj: this.actionMetadata,
     });
+
+    if (options.sampleCode ?? true) {
+      // If you don't let projen manage files for you, we'll still add it as sample code
+      new SampleCode(this, !options.manageOptionsFile);
+    }
+
+    // Let projen manage options.generated.ts for you
+    if (options.manageOptionsFile ?? true) {
+      const source = new GitHubActionSourceCode(this);
+      const actionOptionsSrc = new SourceCode(this, path.join(this.srcdir, 'options.generated.ts'));
+      renderSource(actionOptionsSrc, source.generatedOptionsCode);
+    }
+  }
+}
+
+function renderSource(src: SourceCode, content: string[]) {
+  if (src.marker) {
+    src.line(`// ${src.marker}`);
+  }
+
+  for (const line of content) {
+    src.line(line);
   }
 }
