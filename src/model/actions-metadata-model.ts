@@ -289,11 +289,4 @@ export interface ActionStep extends Step {
    * @example "bash"
    */
   readonly shell?: string;
-
-  /**
-   * Specifies the working directory where the command is run.
-   *
-   * @default - none
-   */
-  readonly workingDirectory?: string;
 }
