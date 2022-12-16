@@ -1,6 +1,6 @@
+import { synthSnapshot } from 'projen/lib/util/synth';
 import { GitHubActionTypeScriptProject } from '../src';
 import { RunsUsing } from '../src/model/actions-metadata-model';
-import { synthSnapshot } from './util';
 
 describe('GitHubActionTypeScriptProject', () => {
   test('default action metadata', () => {
