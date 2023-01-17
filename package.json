@@ -42,7 +42,7 @@
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.7",
     "eslint-import-resolver-typescript": "^2.7.1",
-    "eslint-plugin-import": "^2.27.4",
+    "eslint-plugin-import": "^2.27.5",
     "fs-extra": "^10.1.0",
     "glob": "^8.1.0",
     "jest": "^27",
@@ -53,16 +53,16 @@
     "jsii-pacmak": "^1.73.0",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^16",
-    "projen": "^0.66.15",
+    "projen": "^0.67.0",
     "standard-version": "^9",
     "ts-jest": "^27",
     "typescript": "^4.9.4"
   },
   "peerDependencies": {
-    "projen": "^0.66.15"
+    "projen": "^0.67.0"
   },
   "dependencies": {
-    "projen": "^0.66.15"
+    "projen": "^0.67.0"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
