@@ -52,16 +52,16 @@
     "jsii-docgen": "^6.3.27",
     "jsii-pacmak": "^1.75.0",
     "npm-check-updates": "^16",
-    "projen": "^0.67.63",
+    "projen": "^0.67.64",
     "standard-version": "^9",
     "ts-jest": "^27",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "projen": "^0.67.63"
+    "projen": "^0.67.64"
   },
   "dependencies": {
-    "projen": "^0.67.63"
+    "projen": "^0.67.64"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
