@@ -734,6 +734,7 @@ const gitHubActionTypeScriptOptions: GitHubActionTypeScriptOptions = { ... }
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.packageName">packageName</a></code> | <code>string</code> | The "name" in package.json. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.peerDependencyOptions">peerDependencyOptions</a></code> | <code>projen.javascript.PeerDependencyOptions</code> | Options for `peerDeps`. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.peerDeps">peerDeps</a></code> | <code>string[]</code> | Peer dependencies for this module. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.pnpmVersion">pnpmVersion</a></code> | <code>string</code> | The version of PNPM to use if using PNPM as a package manager. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.repository">repository</a></code> | <code>string</code> | The repository is the location where the actual code for your package lives. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.repositoryDirectory">repositoryDirectory</a></code> | <code>string</code> | If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
@@ -1657,6 +1658,19 @@ Unless `peerDependencyOptions.pinnedDevDependency` is disabled (it is
 enabled by default), projen will automatically add a dev dependency with a
 pinned version for each peer dependency. This will ensure that you build &
 test your module against the lowest peer version required.
+
+---
+
+##### `pnpmVersion`<sup>Optional</sup> <a name="pnpmVersion" id="projen-github-action-typescript.GitHubActionTypeScriptOptions.property.pnpmVersion"></a>
+
+```typescript
+public readonly pnpmVersion: string;
+```
+
+- *Type:* string
+- *Default:* "7"
+
+The version of PNPM to use if using PNPM as a package manager.
 
 ---
 
@@ -3566,7 +3580,7 @@ The command to execute.
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version required by this pacakge. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version required by this package. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum node.js version required by this package. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
@@ -4107,7 +4121,7 @@ public readonly maxNodeVersion: string;
 
 - *Type:* string
 
-Maximum node version required by this pacakge.
+Maximum node version required by this package.
 
 ---
 
