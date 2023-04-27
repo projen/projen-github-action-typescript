@@ -3633,6 +3633,7 @@ The command to execute.
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
@@ -4082,6 +4083,18 @@ public readonly manifest: any;
 ```
 
 - *Type:* any
+
+---
+
+##### `npmrc`<sup>Required</sup> <a name="npmrc" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.npmrc"></a>
+
+```typescript
+public readonly npmrc: NpmConfig;
+```
+
+- *Type:* projen.javascript.NpmConfig
+
+The .npmrc file.
 
 ---
 
