@@ -52,16 +52,16 @@
     "jsii-docgen": "^6.3.27",
     "jsii-pacmak": "^1.80.0",
     "npm-check-updates": "^16",
-    "projen": "^0.71.33",
+    "projen": "^0.71.34",
     "standard-version": "^9",
     "ts-jest": "^27",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "projen": "^0.71.33"
+    "projen": "^0.71.34"
   },
   "dependencies": {
-    "projen": "^0.71.33"
+    "projen": "^0.71.34"
   },
   "resolutions": {
     "@types/prettier": "2.6.0",
