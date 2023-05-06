@@ -3616,6 +3616,7 @@ The command to execute.
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
@@ -3864,6 +3865,18 @@ public readonly root: Project;
 - *Type:* projen.Project
 
 The root project.
+
+---
+
+##### `subprojects`<sup>Required</sup> <a name="subprojects" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.subprojects"></a>
+
+```typescript
+public readonly subprojects: Project[];
+```
+
+- *Type:* projen.Project[]
+
+Returns all the subprojects within this project.
 
 ---
 
