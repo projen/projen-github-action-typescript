@@ -10,6 +10,8 @@ const project = new cdk.JsiiProject({
   packageName: 'projen-github-action-typescript',
   devDeps: ['fs-extra', '@types/fs-extra', 'glob'],
   peerDeps: ['projen'],
+  jsiiVersion: '5.2.x',
+  typescriptVersion: '5.2.x',
 
   autoApproveUpgrades: true,
   autoApproveOptions: { allowedUsernames: ['cdklabs-automation'] },
