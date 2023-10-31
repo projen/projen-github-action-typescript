@@ -1900,6 +1900,7 @@ The runtime used to execute the specified code.
 For JavaScript actions:
 - use `RunsUsing.NODE_12` for Node.js v12.
 - use `RunsUsing.NODE_16` for Node.js v16.
+- use `RunsUsing.NODE_20` for Node.js v20.
 
 For composite actions:
 - use `RunsUsing.COMPOSITE`
@@ -1959,6 +1960,7 @@ The runtime used to execute the specified code.
 For JavaScript actions:
 - use `RunsUsing.NODE_12` for Node.js v12.
 - use `RunsUsing.NODE_16` for Node.js v16.
+- use `RunsUsing.NODE_20` for Node.js v20.
 
 For composite actions:
 - use `RunsUsing.COMPOSITE`
@@ -4436,6 +4438,7 @@ The runtime used to execute the specified code.
 For JavaScript actions:
 - use `RunsUsing.NODE_12` for Node.js v12.
 - use `RunsUsing.NODE_16` for Node.js v16.
+- use `RunsUsing.NODE_20` for Node.js v20.
 
 For composite actions:
 - use `RunsUsing.COMPOSITE`
@@ -4570,6 +4573,7 @@ The GitHub Action runtime or composite/docker identifier.
 | --- | --- |
 | <code><a href="#projen-github-action-typescript.RunsUsing.NODE_12">NODE_12</a></code> | "node12". |
 | <code><a href="#projen-github-action-typescript.RunsUsing.NODE_16">NODE_16</a></code> | "node16". |
+| <code><a href="#projen-github-action-typescript.RunsUsing.NODE_20">NODE_20</a></code> | "node20". |
 | <code><a href="#projen-github-action-typescript.RunsUsing.COMPOSITE">COMPOSITE</a></code> | "composite". |
 | <code><a href="#projen-github-action-typescript.RunsUsing.DOCKER">DOCKER</a></code> | "docker". |
 
@@ -4585,6 +4589,13 @@ The GitHub Action runtime or composite/docker identifier.
 ##### `NODE_16` <a name="NODE_16" id="projen-github-action-typescript.RunsUsing.NODE_16"></a>
 
 "node16".
+
+---
+
+
+##### `NODE_20` <a name="NODE_20" id="projen-github-action-typescript.RunsUsing.NODE_20"></a>
+
+"node20".
 
 ---
 
