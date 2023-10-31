@@ -1,5 +1,1499 @@
 # API Reference <a name="API Reference" id="api-reference"></a>
 
+## Constructs <a name="Constructs" id="Constructs"></a>
+
+### GitHubActionTypeScriptProject <a name="GitHubActionTypeScriptProject" id="projen-github-action-typescript.GitHubActionTypeScriptProject"></a>
+
+Create a GitHub Action with TypeScript.
+
+#### Initializers <a name="Initializers" id="projen-github-action-typescript.GitHubActionTypeScriptProject.Initializer"></a>
+
+```typescript
+import { GitHubActionTypeScriptProject } from 'projen-github-action-typescript'
+
+new GitHubActionTypeScriptProject(options: GitHubActionTypeScriptOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.Initializer.parameter.options">options</a></code> | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions">GitHubActionTypeScriptOptions</a></code> | *No description.* |
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="projen-github-action-typescript.GitHubActionTypeScriptProject.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions">GitHubActionTypeScriptOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addPackageIgnore">addPackageIgnore</a></code> | Exclude these files from the bundled package. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addTask">addTask</a></code> | Adds a new task to this project. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.removeTask">removeTask</a></code> | Removes a task from a project. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addBins">addBins</a></code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
+
+---
+
+##### `toString` <a name="toString" id="projen-github-action-typescript.GitHubActionTypeScriptProject.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addExcludeFromCleanup"></a>
+
+```typescript
+public addExcludeFromCleanup(globs: string): void
+```
+
+Exclude the matching files from pre-synth cleanup.
+
+Can be used when, for example, some
+source files include the projen marker and we don't want them to be erased during synth.
+
+###### `globs`<sup>Required</sup> <a name="globs" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addExcludeFromCleanup.parameter.globs"></a>
+
+- *Type:* string
+
+The glob patterns to match.
+
+---
+
+##### `addGitIgnore` <a name="addGitIgnore" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addGitIgnore"></a>
+
+```typescript
+public addGitIgnore(pattern: string): void
+```
+
+Adds a .gitignore pattern.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addGitIgnore.parameter.pattern"></a>
+
+- *Type:* string
+
+The glob pattern to ignore.
+
+---
+
+##### `addPackageIgnore` <a name="addPackageIgnore" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addPackageIgnore"></a>
+
+```typescript
+public addPackageIgnore(pattern: string): void
+```
+
+Exclude these files from the bundled package.
+
+Implemented by project types based on the
+packaging mechanism. For example, `NodeProject` delegates this to `.npmignore`.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addPackageIgnore.parameter.pattern"></a>
+
+- *Type:* string
+
+---
+
+##### `addTask` <a name="addTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTask"></a>
+
+```typescript
+public addTask(name: string, props?: TaskOptions): Task
+```
+
+Adds a new task to this project.
+
+This will fail if the project already has
+a task with this name.
+
+###### `name`<sup>Required</sup> <a name="name" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTask.parameter.name"></a>
+
+- *Type:* string
+
+The task name to add.
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTask.parameter.props"></a>
+
+- *Type:* projen.TaskOptions
+
+Task properties.
+
+---
+
+##### ~~`addTip`~~ <a name="addTip" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTip"></a>
+
+```typescript
+public addTip(message: string): void
+```
+
+Prints a "tip" message during synthesis.
+
+###### `message`<sup>Required</sup> <a name="message" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTip.parameter.message"></a>
+
+- *Type:* string
+
+The message.
+
+---
+
+##### `annotateGenerated` <a name="annotateGenerated" id="projen-github-action-typescript.GitHubActionTypeScriptProject.annotateGenerated"></a>
+
+```typescript
+public annotateGenerated(glob: string): void
+```
+
+Marks the provided file(s) as being generated.
+
+This is achieved using the
+github-linguist attributes. Generated files do not count against the
+repository statistics and language breakdown.
+
+> [https://github.com/github/linguist/blob/master/docs/overrides.md](https://github.com/github/linguist/blob/master/docs/overrides.md)
+
+###### `glob`<sup>Required</sup> <a name="glob" id="projen-github-action-typescript.GitHubActionTypeScriptProject.annotateGenerated.parameter.glob"></a>
+
+- *Type:* string
+
+the glob pattern to match (could be a file path).
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="projen-github-action-typescript.GitHubActionTypeScriptProject.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after all components are synthesized.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="projen-github-action-typescript.GitHubActionTypeScriptProject.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before all components are synthesized.
+
+##### `removeTask` <a name="removeTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.removeTask"></a>
+
+```typescript
+public removeTask(name: string): Task
+```
+
+Removes a task from a project.
+
+###### `name`<sup>Required</sup> <a name="name" id="projen-github-action-typescript.GitHubActionTypeScriptProject.removeTask.parameter.name"></a>
+
+- *Type:* string
+
+The name of the task to remove.
+
+---
+
+##### `runTaskCommand` <a name="runTaskCommand" id="projen-github-action-typescript.GitHubActionTypeScriptProject.runTaskCommand"></a>
+
+```typescript
+public runTaskCommand(task: Task): string
+```
+
+Returns the shell command to execute in order to run a task.
+
+This will
+typically be `npx projen TASK`.
+
+###### `task`<sup>Required</sup> <a name="task" id="projen-github-action-typescript.GitHubActionTypeScriptProject.runTaskCommand.parameter.task"></a>
+
+- *Type:* projen.Task
+
+The task for which the command is required.
+
+---
+
+##### `synth` <a name="synth" id="projen-github-action-typescript.GitHubActionTypeScriptProject.synth"></a>
+
+```typescript
+public synth(): void
+```
+
+Synthesize all project files into `outdir`.
+
+1. Call "this.preSynthesize()"
+2. Delete all generated files
+3. Synthesize all subprojects
+4. Synthesize all components of this project
+5. Call "postSynthesize()" for all components of this project
+6. Call "this.postSynthesize()"
+
+##### `tryFindFile` <a name="tryFindFile" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindFile"></a>
+
+```typescript
+public tryFindFile(filePath: string): FileBase
+```
+
+Finds a file at the specified relative path within this project and all its subprojects.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+If this path is relative, it will be resolved
+from the root of _this_ project.
+
+---
+
+##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindJsonFile"></a>
+
+```typescript
+public tryFindJsonFile(filePath: string): JsonFile
+```
+
+Finds a json file by name.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindJsonFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+---
+
+##### `tryFindObjectFile` <a name="tryFindObjectFile" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindObjectFile"></a>
+
+```typescript
+public tryFindObjectFile(filePath: string): ObjectFile
+```
+
+Finds an object file (like JsonFile, YamlFile, etc.) by name.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindObjectFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+---
+
+##### `tryRemoveFile` <a name="tryRemoveFile" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryRemoveFile"></a>
+
+```typescript
+public tryRemoveFile(filePath: string): FileBase
+```
+
+Finds a file at the specified relative path within this project and removes it.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryRemoveFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+If this path is relative, it will be
+resolved from the root of _this_ project.
+
+---
+
+##### `addBins` <a name="addBins" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addBins"></a>
+
+```typescript
+public addBins(bins: {[ key: string ]: string}): void
+```
+
+###### `bins`<sup>Required</sup> <a name="bins" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addBins.parameter.bins"></a>
+
+- *Type:* {[ key: string ]: string}
+
+---
+
+##### `addBundledDeps` <a name="addBundledDeps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addBundledDeps"></a>
+
+```typescript
+public addBundledDeps(deps: string): void
+```
+
+Defines bundled dependencies.
+
+Bundled dependencies will be added as normal dependencies as well as to the
+`bundledDependencies` section of your `package.json`.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addBundledDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addCompileCommand"></a>
+
+```typescript
+public addCompileCommand(commands: string): void
+```
+
+DEPRECATED.
+
+###### `commands`<sup>Required</sup> <a name="commands" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addCompileCommand.parameter.commands"></a>
+
+- *Type:* string
+
+---
+
+##### `addDeps` <a name="addDeps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addDeps"></a>
+
+```typescript
+public addDeps(deps: string): void
+```
+
+Defines normal dependencies.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addDevDeps` <a name="addDevDeps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addDevDeps"></a>
+
+```typescript
+public addDevDeps(deps: string): void
+```
+
+Defines development/test dependencies.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addDevDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addFields` <a name="addFields" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addFields"></a>
+
+```typescript
+public addFields(fields: {[ key: string ]: any}): void
+```
+
+Directly set fields in `package.json`.
+
+###### `fields`<sup>Required</sup> <a name="fields" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addFields.parameter.fields"></a>
+
+- *Type:* {[ key: string ]: any}
+
+The fields to set.
+
+---
+
+##### `addKeywords` <a name="addKeywords" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addKeywords"></a>
+
+```typescript
+public addKeywords(keywords: string): void
+```
+
+Adds keywords to package.json (deduplicated).
+
+###### `keywords`<sup>Required</sup> <a name="keywords" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addKeywords.parameter.keywords"></a>
+
+- *Type:* string
+
+The keywords to add.
+
+---
+
+##### `addPeerDeps` <a name="addPeerDeps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addPeerDeps"></a>
+
+```typescript
+public addPeerDeps(deps: string): void
+```
+
+Defines peer dependencies.
+
+When adding peer dependencies, a devDependency will also be added on the
+pinned version of the declared peer. This will ensure that you are testing
+your code against the minimum version required from your consumers.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addPeerDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addScripts` <a name="addScripts" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addScripts"></a>
+
+```typescript
+public addScripts(scripts: {[ key: string ]: string}): void
+```
+
+Replaces the contents of multiple npm package.json scripts.
+
+###### `scripts`<sup>Required</sup> <a name="scripts" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addScripts.parameter.scripts"></a>
+
+- *Type:* {[ key: string ]: string}
+
+The scripts to set.
+
+---
+
+##### ~~`addTestCommand`~~ <a name="addTestCommand" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTestCommand"></a>
+
+```typescript
+public addTestCommand(commands: string): void
+```
+
+DEPRECATED.
+
+###### `commands`<sup>Required</sup> <a name="commands" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTestCommand.parameter.commands"></a>
+
+- *Type:* string
+
+---
+
+##### ~~`hasScript`~~ <a name="hasScript" id="projen-github-action-typescript.GitHubActionTypeScriptProject.hasScript"></a>
+
+```typescript
+public hasScript(name: string): boolean
+```
+
+Indicates if a script by the name name is defined.
+
+###### `name`<sup>Required</sup> <a name="name" id="projen-github-action-typescript.GitHubActionTypeScriptProject.hasScript.parameter.name"></a>
+
+- *Type:* string
+
+The name of the script.
+
+---
+
+##### `removeScript` <a name="removeScript" id="projen-github-action-typescript.GitHubActionTypeScriptProject.removeScript"></a>
+
+```typescript
+public removeScript(name: string): void
+```
+
+Removes the npm script (always successful).
+
+###### `name`<sup>Required</sup> <a name="name" id="projen-github-action-typescript.GitHubActionTypeScriptProject.removeScript.parameter.name"></a>
+
+- *Type:* string
+
+The name of the script.
+
+---
+
+##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="projen-github-action-typescript.GitHubActionTypeScriptProject.renderWorkflowSetup"></a>
+
+```typescript
+public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
+```
+
+Returns the set of workflow steps which should be executed to bootstrap a workflow.
+
+###### `options`<sup>Optional</sup> <a name="options" id="projen-github-action-typescript.GitHubActionTypeScriptProject.renderWorkflowSetup.parameter.options"></a>
+
+- *Type:* projen.javascript.RenderWorkflowSetupOptions
+
+Options.
+
+---
+
+##### `setScript` <a name="setScript" id="projen-github-action-typescript.GitHubActionTypeScriptProject.setScript"></a>
+
+```typescript
+public setScript(name: string, command: string): void
+```
+
+Replaces the contents of an npm package.json script.
+
+###### `name`<sup>Required</sup> <a name="name" id="projen-github-action-typescript.GitHubActionTypeScriptProject.setScript.parameter.name"></a>
+
+- *Type:* string
+
+The script name.
+
+---
+
+###### `command`<sup>Required</sup> <a name="command" id="projen-github-action-typescript.GitHubActionTypeScriptProject.setScript.parameter.command"></a>
+
+- *Type:* string
+
+The command to execute.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.isProject">isProject</a></code> | Test whether the given construct is a project. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.of">of</a></code> | Find the closest ancestor project for given construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="projen-github-action-typescript.GitHubActionTypeScriptProject.isConstruct"></a>
+
+```typescript
+import { GitHubActionTypeScriptProject } from 'projen-github-action-typescript'
+
+GitHubActionTypeScriptProject.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="projen-github-action-typescript.GitHubActionTypeScriptProject.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isProject` <a name="isProject" id="projen-github-action-typescript.GitHubActionTypeScriptProject.isProject"></a>
+
+```typescript
+import { GitHubActionTypeScriptProject } from 'projen-github-action-typescript'
+
+GitHubActionTypeScriptProject.isProject(x: any)
+```
+
+Test whether the given construct is a project.
+
+###### `x`<sup>Required</sup> <a name="x" id="projen-github-action-typescript.GitHubActionTypeScriptProject.isProject.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="projen-github-action-typescript.GitHubActionTypeScriptProject.of"></a>
+
+```typescript
+import { GitHubActionTypeScriptProject } from 'projen-github-action-typescript'
+
+GitHubActionTypeScriptProject.of(construct: IConstruct)
+```
+
+Find the closest ancestor project for given construct.
+
+When given a project, this it the project itself.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="projen-github-action-typescript.GitHubActionTypeScriptProject.of.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.name">name</a></code> | <code>string</code> | Project name. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version required by this package. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum node.js version required by this package. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `buildTask`<sup>Required</sup> <a name="buildTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildTask"></a>
+
+```typescript
+public readonly buildTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.commitGenerated"></a>
+
+```typescript
+public readonly commitGenerated: boolean;
+```
+
+- *Type:* boolean
+
+Whether to commit the managed files by default.
+
+---
+
+##### `compileTask`<sup>Required</sup> <a name="compileTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.compileTask"></a>
+
+```typescript
+public readonly compileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `components`<sup>Required</sup> <a name="components" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.components"></a>
+
+```typescript
+public readonly components: Component[];
+```
+
+- *Type:* projen.Component[]
+
+Returns all the components within this project.
+
+---
+
+##### `deps`<sup>Required</sup> <a name="deps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.deps"></a>
+
+```typescript
+public readonly deps: Dependencies;
+```
+
+- *Type:* projen.Dependencies
+
+Project dependencies.
+
+---
+
+##### `ejected`<sup>Required</sup> <a name="ejected" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.ejected"></a>
+
+```typescript
+public readonly ejected: boolean;
+```
+
+- *Type:* boolean
+
+Whether or not the project is being ejected.
+
+---
+
+##### `files`<sup>Required</sup> <a name="files" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.files"></a>
+
+```typescript
+public readonly files: FileBase[];
+```
+
+- *Type:* projen.FileBase[]
+
+All files in this project.
+
+---
+
+##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.gitattributes"></a>
+
+```typescript
+public readonly gitattributes: GitAttributesFile;
+```
+
+- *Type:* projen.GitAttributesFile
+
+The .gitattributes file for this repository.
+
+---
+
+##### `gitignore`<sup>Required</sup> <a name="gitignore" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.gitignore"></a>
+
+```typescript
+public readonly gitignore: IgnoreFile;
+```
+
+- *Type:* projen.IgnoreFile
+
+.gitignore.
+
+---
+
+##### `logger`<sup>Required</sup> <a name="logger" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.logger"></a>
+
+```typescript
+public readonly logger: Logger;
+```
+
+- *Type:* projen.Logger
+
+Logging utilities.
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Project name.
+
+---
+
+##### `outdir`<sup>Required</sup> <a name="outdir" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.outdir"></a>
+
+```typescript
+public readonly outdir: string;
+```
+
+- *Type:* string
+
+Absolute output directory of this project.
+
+---
+
+##### `packageTask`<sup>Required</sup> <a name="packageTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.packageTask"></a>
+
+```typescript
+public readonly packageTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.postCompileTask"></a>
+
+```typescript
+public readonly postCompileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.preCompileTask"></a>
+
+```typescript
+public readonly preCompileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.projectBuild"></a>
+
+```typescript
+public readonly projectBuild: ProjectBuild;
+```
+
+- *Type:* projen.ProjectBuild
+
+Manages the build process of the project.
+
+---
+
+##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.projenCommand"></a>
+
+```typescript
+public readonly projenCommand: string;
+```
+
+- *Type:* string
+
+The command to use in order to run the projen CLI.
+
+---
+
+##### `root`<sup>Required</sup> <a name="root" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.root"></a>
+
+```typescript
+public readonly root: Project;
+```
+
+- *Type:* projen.Project
+
+The root project.
+
+---
+
+##### `subprojects`<sup>Required</sup> <a name="subprojects" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.subprojects"></a>
+
+```typescript
+public readonly subprojects: Project[];
+```
+
+- *Type:* projen.Project[]
+
+Returns all the subprojects within this project.
+
+---
+
+##### `tasks`<sup>Required</sup> <a name="tasks" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.tasks"></a>
+
+```typescript
+public readonly tasks: Tasks;
+```
+
+- *Type:* projen.Tasks
+
+Project tasks.
+
+---
+
+##### `testTask`<sup>Required</sup> <a name="testTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.testTask"></a>
+
+```typescript
+public readonly testTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.defaultTask"></a>
+
+```typescript
+public readonly defaultTask: Task;
+```
+
+- *Type:* projen.Task
+
+This is the "default" task, the one that executes "projen".
+
+Undefined if
+the project is being ejected.
+
+---
+
+##### `initProject`<sup>Optional</sup> <a name="initProject" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.initProject"></a>
+
+```typescript
+public readonly initProject: InitProject;
+```
+
+- *Type:* projen.InitProject
+
+The options used when this project is bootstrapped via `projen new`.
+
+It
+includes the original set of options passed to the CLI and also the JSII
+FQN of the project type.
+
+---
+
+##### `parent`<sup>Optional</sup> <a name="parent" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.parent"></a>
+
+```typescript
+public readonly parent: Project;
+```
+
+- *Type:* projen.Project
+
+A parent project.
+
+If undefined, this is the root project.
+
+---
+
+##### `projectType`<sup>Required</sup> <a name="projectType" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.projectType"></a>
+
+```typescript
+public readonly projectType: ProjectType;
+```
+
+- *Type:* projen.ProjectType
+
+---
+
+##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.autoApprove"></a>
+
+```typescript
+public readonly autoApprove: AutoApprove;
+```
+
+- *Type:* projen.github.AutoApprove
+
+Auto approve set up for this project.
+
+---
+
+##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.devContainer"></a>
+
+```typescript
+public readonly devContainer: DevContainer;
+```
+
+- *Type:* projen.vscode.DevContainer
+
+Access for .devcontainer.json (used for GitHub Codespaces).
+
+This will be `undefined` if devContainer boolean is false
+
+---
+
+##### `github`<sup>Optional</sup> <a name="github" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.github"></a>
+
+```typescript
+public readonly github: GitHub;
+```
+
+- *Type:* projen.github.GitHub
+
+Access all github components.
+
+This will be `undefined` for subprojects.
+
+---
+
+##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.gitpod"></a>
+
+```typescript
+public readonly gitpod: Gitpod;
+```
+
+- *Type:* projen.Gitpod
+
+Access for Gitpod.
+
+This will be `undefined` if gitpod boolean is false
+
+---
+
+##### `vscode`<sup>Optional</sup> <a name="vscode" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.vscode"></a>
+
+```typescript
+public readonly vscode: VsCode;
+```
+
+- *Type:* projen.vscode.VsCode
+
+Access all VSCode components.
+
+This will be `undefined` for subprojects.
+
+---
+
+##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.allowLibraryDependencies"></a>
+
+- *Deprecated:* use `package.allowLibraryDependencies`
+
+```typescript
+public readonly allowLibraryDependencies: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.artifactsDirectory"></a>
+
+```typescript
+public readonly artifactsDirectory: string;
+```
+
+- *Type:* string
+
+The build output directory.
+
+An npm tarball will be created under the `js`
+subdirectory. For example, if this is set to `dist` (the default), the npm
+tarball will be placed under `dist/js/boom-boom-1.2.3.tg`.
+
+---
+
+##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.artifactsJavascriptDirectory"></a>
+
+```typescript
+public readonly artifactsJavascriptDirectory: string;
+```
+
+- *Type:* string
+
+The location of the npm tarball after build (`${artifactsDirectory}/js`).
+
+---
+
+##### `bundler`<sup>Required</sup> <a name="bundler" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.bundler"></a>
+
+```typescript
+public readonly bundler: Bundler;
+```
+
+- *Type:* projen.javascript.Bundler
+
+---
+
+##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.entrypoint"></a>
+
+- *Deprecated:* use `package.entrypoint`
+
+```typescript
+public readonly entrypoint: string;
+```
+
+- *Type:* string
+
+---
+
+##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.manifest"></a>
+
+- *Deprecated:* use `package.addField(x, y)`
+
+```typescript
+public readonly manifest: any;
+```
+
+- *Type:* any
+
+---
+
+##### `npmrc`<sup>Required</sup> <a name="npmrc" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.npmrc"></a>
+
+```typescript
+public readonly npmrc: NpmConfig;
+```
+
+- *Type:* projen.javascript.NpmConfig
+
+The .npmrc file.
+
+---
+
+##### `package`<sup>Required</sup> <a name="package" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.package"></a>
+
+```typescript
+public readonly package: NodePackage;
+```
+
+- *Type:* projen.javascript.NodePackage
+
+API for managing the node package.
+
+---
+
+##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.packageManager"></a>
+
+- *Deprecated:* use `package.packageManager`
+
+```typescript
+public readonly packageManager: NodePackageManager;
+```
+
+- *Type:* projen.javascript.NodePackageManager
+
+The package manager to use.
+
+---
+
+##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.runScriptCommand"></a>
+
+```typescript
+public readonly runScriptCommand: string;
+```
+
+- *Type:* string
+
+The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager).
+
+---
+
+##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.autoMerge"></a>
+
+```typescript
+public readonly autoMerge: AutoMerge;
+```
+
+- *Type:* projen.github.AutoMerge
+
+Component that sets up mergify for merging approved pull requests.
+
+---
+
+##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildWorkflow"></a>
+
+```typescript
+public readonly buildWorkflow: BuildWorkflow;
+```
+
+- *Type:* projen.build.BuildWorkflow
+
+The PR build GitHub workflow.
+
+`undefined` if `buildWorkflow` is disabled.
+
+---
+
+##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildWorkflowJobId"></a>
+
+```typescript
+public readonly buildWorkflowJobId: string;
+```
+
+- *Type:* string
+
+The job ID of the build workflow.
+
+---
+
+##### `jest`<sup>Optional</sup> <a name="jest" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.jest"></a>
+
+```typescript
+public readonly jest: Jest;
+```
+
+- *Type:* projen.javascript.Jest
+
+The Jest configuration (if enabled).
+
+---
+
+##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.maxNodeVersion"></a>
+
+```typescript
+public readonly maxNodeVersion: string;
+```
+
+- *Type:* string
+
+Maximum node version required by this package.
+
+---
+
+##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.minNodeVersion"></a>
+
+```typescript
+public readonly minNodeVersion: string;
+```
+
+- *Type:* string
+
+Minimum node.js version required by this package.
+
+---
+
+##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.npmignore"></a>
+
+```typescript
+public readonly npmignore: IgnoreFile;
+```
+
+- *Type:* projen.IgnoreFile
+
+The .npmignore file.
+
+---
+
+##### `prettier`<sup>Optional</sup> <a name="prettier" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.prettier"></a>
+
+```typescript
+public readonly prettier: Prettier;
+```
+
+- *Type:* projen.javascript.Prettier
+
+---
+
+##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.publisher"></a>
+
+- *Deprecated:* use `release.publisher`.
+
+```typescript
+public readonly publisher: Publisher;
+```
+
+- *Type:* projen.release.Publisher
+
+Package publisher.
+
+This will be `undefined` if the project does not have a
+release workflow.
+
+---
+
+##### `release`<sup>Optional</sup> <a name="release" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.release"></a>
+
+```typescript
+public readonly release: Release;
+```
+
+- *Type:* projen.release.Release
+
+Release management.
+
+---
+
+##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.upgradeWorkflow"></a>
+
+```typescript
+public readonly upgradeWorkflow: UpgradeDependencies;
+```
+
+- *Type:* projen.javascript.UpgradeDependencies
+
+The upgrade workflow.
+
+---
+
+##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.docsDirectory"></a>
+
+```typescript
+public readonly docsDirectory: string;
+```
+
+- *Type:* string
+
+---
+
+##### `libdir`<sup>Required</sup> <a name="libdir" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.libdir"></a>
+
+```typescript
+public readonly libdir: string;
+```
+
+- *Type:* string
+
+The directory in which compiled .js files reside.
+
+---
+
+##### `srcdir`<sup>Required</sup> <a name="srcdir" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.srcdir"></a>
+
+```typescript
+public readonly srcdir: string;
+```
+
+- *Type:* string
+
+The directory in which the .ts sources reside.
+
+---
+
+##### `testdir`<sup>Required</sup> <a name="testdir" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.testdir"></a>
+
+```typescript
+public readonly testdir: string;
+```
+
+- *Type:* string
+
+The directory in which tests reside.
+
+---
+
+##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfigDev"></a>
+
+```typescript
+public readonly tsconfigDev: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+A typescript configuration file which covers all files (sources, tests, projen).
+
+---
+
+##### `watchTask`<sup>Required</sup> <a name="watchTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.watchTask"></a>
+
+```typescript
+public readonly watchTask: Task;
+```
+
+- *Type:* projen.Task
+
+The "watch" task.
+
+---
+
+##### `docgen`<sup>Optional</sup> <a name="docgen" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.docgen"></a>
+
+```typescript
+public readonly docgen: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `eslint`<sup>Optional</sup> <a name="eslint" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.eslint"></a>
+
+```typescript
+public readonly eslint: Eslint;
+```
+
+- *Type:* projen.javascript.Eslint
+
+---
+
+##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfig"></a>
+
+```typescript
+public readonly tsconfig: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+---
+
+##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfigEslint"></a>
+
+```typescript
+public readonly tsconfigEslint: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
+
+---
+
+##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.DEFAULT_TASK"></a>
+
+```typescript
+public readonly DEFAULT_TASK: string;
+```
+
+- *Type:* string
+
+The name of the default task (the task executed when `projen` is run without arguments).
+
+Normally
+this task should synthesize the project files.
+
+---
 
 ## Structs <a name="Structs" id="Structs"></a>
 
@@ -762,6 +2256,7 @@ const gitHubActionTypeScriptOptions: GitHubActionTypeScriptOptions = { ... }
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with standard-version package. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.workflowContainerImage">workflowContainerImage</a></code> | <code>string</code> | Container image to use for GitHub workflows. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
@@ -774,7 +2269,7 @@ const gitHubActionTypeScriptOptions: GitHubActionTypeScriptOptions = { ... }
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.dependabotOptions">dependabotOptions</a></code> | <code>projen.github.DependabotOptions</code> | Options for dependabot. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.depsUpgrade">depsUpgrade</a></code> | <code>boolean</code> | Use github workflows to handle dependency upgrades. |
+| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.depsUpgrade">depsUpgrade</a></code> | <code>boolean</code> | Use tasks and github workflows to handle dependency upgrades. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.depsUpgradeOptions">depsUpgradeOptions</a></code> | <code>projen.javascript.UpgradeDependenciesOptions</code> | Options for `UpgradeDependencies`. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.gitignore">gitignore</a></code> | <code>string[]</code> | Additional entries to .gitignore. |
 | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions.property.jest">jest</a></code> | <code>boolean</code> | Setup jest unit tests. |
@@ -898,7 +2393,7 @@ Relative to this directory, all files are synthesized.
 
 If this project has a parent, this directory is relative to the parent
 directory and it cannot be the same as the parent or any of it's other
-sub-projects.
+subprojects.
 
 ---
 
@@ -1620,7 +3115,7 @@ public readonly packageManager: NodePackageManager;
 ```
 
 - *Type:* projen.javascript.NodePackageManager
-- *Default:* NodePackageManager.YARN
+- *Default:* NodePackageManager.YARN_CLASSIC
 
 The Node Package Manager used to execute scripts.
 
@@ -2067,6 +3562,18 @@ Github Runner selection labels.
 
 ---
 
+##### `workflowRunsOnGroup`<sup>Optional</sup> <a name="workflowRunsOnGroup" id="projen-github-action-typescript.GitHubActionTypeScriptOptions.property.workflowRunsOnGroup"></a>
+
+```typescript
+public readonly workflowRunsOnGroup: GroupRunnerOptions;
+```
+
+- *Type:* projen.GroupRunnerOptions
+
+Github Runner Group selection options.
+
+---
+
 ##### `defaultReleaseBranch`<sup>Required</sup> <a name="defaultReleaseBranch" id="projen-github-action-typescript.GitHubActionTypeScriptOptions.property.defaultReleaseBranch"></a>
 
 ```typescript
@@ -2235,7 +3742,7 @@ public readonly depsUpgrade: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Use github workflows to handle dependency upgrades.
+Use tasks and github workflows to handle dependency upgrades.
 
 Cannot be used in conjunction with `dependabot`.
 
@@ -3049,1403 +4556,6 @@ and must be omitted otherwise.
 
 ---
 
-## Classes <a name="Classes" id="Classes"></a>
-
-### GitHubActionTypeScriptProject <a name="GitHubActionTypeScriptProject" id="projen-github-action-typescript.GitHubActionTypeScriptProject"></a>
-
-Create a GitHub Action with TypeScript.
-
-#### Initializers <a name="Initializers" id="projen-github-action-typescript.GitHubActionTypeScriptProject.Initializer"></a>
-
-```typescript
-import { GitHubActionTypeScriptProject } from 'projen-github-action-typescript'
-
-new GitHubActionTypeScriptProject(options: GitHubActionTypeScriptOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.Initializer.parameter.options">options</a></code> | <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions">GitHubActionTypeScriptOptions</a></code> | *No description.* |
-
----
-
-##### `options`<sup>Required</sup> <a name="options" id="projen-github-action-typescript.GitHubActionTypeScriptProject.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#projen-github-action-typescript.GitHubActionTypeScriptOptions">GitHubActionTypeScriptOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addPackageIgnore">addPackageIgnore</a></code> | Exclude these files from the bundled package. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addTask">addTask</a></code> | Adds a new task to this project. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.removeTask">removeTask</a></code> | Removes a task from a project. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addBins">addBins</a></code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
-
----
-
-##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addExcludeFromCleanup"></a>
-
-```typescript
-public addExcludeFromCleanup(globs: string): void
-```
-
-Exclude the matching files from pre-synth cleanup.
-
-Can be used when, for example, some
-source files include the projen marker and we don't want them to be erased during synth.
-
-###### `globs`<sup>Required</sup> <a name="globs" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addExcludeFromCleanup.parameter.globs"></a>
-
-- *Type:* string
-
-The glob patterns to match.
-
----
-
-##### `addGitIgnore` <a name="addGitIgnore" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addGitIgnore"></a>
-
-```typescript
-public addGitIgnore(pattern: string): void
-```
-
-Adds a .gitignore pattern.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addGitIgnore.parameter.pattern"></a>
-
-- *Type:* string
-
-The glob pattern to ignore.
-
----
-
-##### `addPackageIgnore` <a name="addPackageIgnore" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addPackageIgnore"></a>
-
-```typescript
-public addPackageIgnore(pattern: string): void
-```
-
-Exclude these files from the bundled package.
-
-Implemented by project types based on the
-packaging mechanism. For example, `NodeProject` delegates this to `.npmignore`.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addPackageIgnore.parameter.pattern"></a>
-
-- *Type:* string
-
----
-
-##### `addTask` <a name="addTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTask"></a>
-
-```typescript
-public addTask(name: string, props?: TaskOptions): Task
-```
-
-Adds a new task to this project.
-
-This will fail if the project already has
-a task with this name.
-
-###### `name`<sup>Required</sup> <a name="name" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTask.parameter.name"></a>
-
-- *Type:* string
-
-The task name to add.
-
----
-
-###### `props`<sup>Optional</sup> <a name="props" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTask.parameter.props"></a>
-
-- *Type:* projen.TaskOptions
-
-Task properties.
-
----
-
-##### ~~`addTip`~~ <a name="addTip" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTip"></a>
-
-```typescript
-public addTip(message: string): void
-```
-
-Prints a "tip" message during synthesis.
-
-###### `message`<sup>Required</sup> <a name="message" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTip.parameter.message"></a>
-
-- *Type:* string
-
-The message.
-
----
-
-##### `annotateGenerated` <a name="annotateGenerated" id="projen-github-action-typescript.GitHubActionTypeScriptProject.annotateGenerated"></a>
-
-```typescript
-public annotateGenerated(glob: string): void
-```
-
-Marks the provided file(s) as being generated.
-
-This is achieved using the
-github-linguist attributes. Generated files do not count against the
-repository statistics and language breakdown.
-
-> [https://github.com/github/linguist/blob/master/docs/overrides.md](https://github.com/github/linguist/blob/master/docs/overrides.md)
-
-###### `glob`<sup>Required</sup> <a name="glob" id="projen-github-action-typescript.GitHubActionTypeScriptProject.annotateGenerated.parameter.glob"></a>
-
-- *Type:* string
-
-the glob pattern to match (could be a file path).
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="projen-github-action-typescript.GitHubActionTypeScriptProject.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after all components are synthesized.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="projen-github-action-typescript.GitHubActionTypeScriptProject.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before all components are synthesized.
-
-##### `removeTask` <a name="removeTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.removeTask"></a>
-
-```typescript
-public removeTask(name: string): Task
-```
-
-Removes a task from a project.
-
-###### `name`<sup>Required</sup> <a name="name" id="projen-github-action-typescript.GitHubActionTypeScriptProject.removeTask.parameter.name"></a>
-
-- *Type:* string
-
-The name of the task to remove.
-
----
-
-##### `runTaskCommand` <a name="runTaskCommand" id="projen-github-action-typescript.GitHubActionTypeScriptProject.runTaskCommand"></a>
-
-```typescript
-public runTaskCommand(task: Task): string
-```
-
-Returns the shell command to execute in order to run a task.
-
-This will
-typically be `npx projen TASK`.
-
-###### `task`<sup>Required</sup> <a name="task" id="projen-github-action-typescript.GitHubActionTypeScriptProject.runTaskCommand.parameter.task"></a>
-
-- *Type:* projen.Task
-
-The task for which the command is required.
-
----
-
-##### `synth` <a name="synth" id="projen-github-action-typescript.GitHubActionTypeScriptProject.synth"></a>
-
-```typescript
-public synth(): void
-```
-
-Synthesize all project files into `outdir`.
-
-1. Call "this.preSynthesize()"
-2. Delete all generated files
-3. Synthesize all sub-projects
-4. Synthesize all components of this project
-5. Call "postSynthesize()" for all components of this project
-6. Call "this.postSynthesize()"
-
-##### `tryFindFile` <a name="tryFindFile" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindFile"></a>
-
-```typescript
-public tryFindFile(filePath: string): FileBase
-```
-
-Finds a file at the specified relative path within this project and all its subprojects.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
-If this path is relative, it will be resolved
-from the root of _this_ project.
-
----
-
-##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindJsonFile"></a>
-
-```typescript
-public tryFindJsonFile(filePath: string): JsonFile
-```
-
-Finds a json file by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindJsonFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
-##### `tryFindObjectFile` <a name="tryFindObjectFile" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindObjectFile"></a>
-
-```typescript
-public tryFindObjectFile(filePath: string): ObjectFile
-```
-
-Finds an object file (like JsonFile, YamlFile, etc.) by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryFindObjectFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
-##### `tryRemoveFile` <a name="tryRemoveFile" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryRemoveFile"></a>
-
-```typescript
-public tryRemoveFile(filePath: string): FileBase
-```
-
-Finds a file at the specified relative path within this project and removes it.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="projen-github-action-typescript.GitHubActionTypeScriptProject.tryRemoveFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
-If this path is relative, it will be
-resolved from the root of _this_ project.
-
----
-
-##### `addBins` <a name="addBins" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addBins"></a>
-
-```typescript
-public addBins(bins: {[ key: string ]: string}): void
-```
-
-###### `bins`<sup>Required</sup> <a name="bins" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addBins.parameter.bins"></a>
-
-- *Type:* {[ key: string ]: string}
-
----
-
-##### `addBundledDeps` <a name="addBundledDeps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addBundledDeps"></a>
-
-```typescript
-public addBundledDeps(deps: string): void
-```
-
-Defines bundled dependencies.
-
-Bundled dependencies will be added as normal dependencies as well as to the
-`bundledDependencies` section of your `package.json`.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addBundledDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addCompileCommand"></a>
-
-```typescript
-public addCompileCommand(commands: string): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addCompileCommand.parameter.commands"></a>
-
-- *Type:* string
-
----
-
-##### `addDeps` <a name="addDeps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addDeps"></a>
-
-```typescript
-public addDeps(deps: string): void
-```
-
-Defines normal dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addDevDeps` <a name="addDevDeps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addDevDeps"></a>
-
-```typescript
-public addDevDeps(deps: string): void
-```
-
-Defines development/test dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addDevDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addFields` <a name="addFields" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addFields"></a>
-
-```typescript
-public addFields(fields: {[ key: string ]: any}): void
-```
-
-Directly set fields in `package.json`.
-
-###### `fields`<sup>Required</sup> <a name="fields" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addFields.parameter.fields"></a>
-
-- *Type:* {[ key: string ]: any}
-
-The fields to set.
-
----
-
-##### `addKeywords` <a name="addKeywords" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addKeywords"></a>
-
-```typescript
-public addKeywords(keywords: string): void
-```
-
-Adds keywords to package.json (deduplicated).
-
-###### `keywords`<sup>Required</sup> <a name="keywords" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addKeywords.parameter.keywords"></a>
-
-- *Type:* string
-
-The keywords to add.
-
----
-
-##### `addPeerDeps` <a name="addPeerDeps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addPeerDeps"></a>
-
-```typescript
-public addPeerDeps(deps: string): void
-```
-
-Defines peer dependencies.
-
-When adding peer dependencies, a devDependency will also be added on the
-pinned version of the declared peer. This will ensure that you are testing
-your code against the minimum version required from your consumers.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addPeerDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addScripts` <a name="addScripts" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addScripts"></a>
-
-```typescript
-public addScripts(scripts: {[ key: string ]: string}): void
-```
-
-Replaces the contents of multiple npm package.json scripts.
-
-###### `scripts`<sup>Required</sup> <a name="scripts" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addScripts.parameter.scripts"></a>
-
-- *Type:* {[ key: string ]: string}
-
-The scripts to set.
-
----
-
-##### ~~`addTestCommand`~~ <a name="addTestCommand" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTestCommand"></a>
-
-```typescript
-public addTestCommand(commands: string): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="projen-github-action-typescript.GitHubActionTypeScriptProject.addTestCommand.parameter.commands"></a>
-
-- *Type:* string
-
----
-
-##### ~~`hasScript`~~ <a name="hasScript" id="projen-github-action-typescript.GitHubActionTypeScriptProject.hasScript"></a>
-
-```typescript
-public hasScript(name: string): boolean
-```
-
-Indicates if a script by the name name is defined.
-
-###### `name`<sup>Required</sup> <a name="name" id="projen-github-action-typescript.GitHubActionTypeScriptProject.hasScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
-
----
-
-##### `removeScript` <a name="removeScript" id="projen-github-action-typescript.GitHubActionTypeScriptProject.removeScript"></a>
-
-```typescript
-public removeScript(name: string): void
-```
-
-Removes the npm script (always successful).
-
-###### `name`<sup>Required</sup> <a name="name" id="projen-github-action-typescript.GitHubActionTypeScriptProject.removeScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
-
----
-
-##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="projen-github-action-typescript.GitHubActionTypeScriptProject.renderWorkflowSetup"></a>
-
-```typescript
-public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
-```
-
-Returns the set of workflow steps which should be executed to bootstrap a workflow.
-
-###### `options`<sup>Optional</sup> <a name="options" id="projen-github-action-typescript.GitHubActionTypeScriptProject.renderWorkflowSetup.parameter.options"></a>
-
-- *Type:* projen.javascript.RenderWorkflowSetupOptions
-
-Options.
-
----
-
-##### `setScript` <a name="setScript" id="projen-github-action-typescript.GitHubActionTypeScriptProject.setScript"></a>
-
-```typescript
-public setScript(name: string, command: string): void
-```
-
-Replaces the contents of an npm package.json script.
-
-###### `name`<sup>Required</sup> <a name="name" id="projen-github-action-typescript.GitHubActionTypeScriptProject.setScript.parameter.name"></a>
-
-- *Type:* string
-
-The script name.
-
----
-
-###### `command`<sup>Required</sup> <a name="command" id="projen-github-action-typescript.GitHubActionTypeScriptProject.setScript.parameter.command"></a>
-
-- *Type:* string
-
-The command to execute.
-
----
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.name">name</a></code> | <code>string</code> | Project name. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version required by this package. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum node.js version required by this package. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-
----
-
-##### `buildTask`<sup>Required</sup> <a name="buildTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildTask"></a>
-
-```typescript
-public readonly buildTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.commitGenerated"></a>
-
-```typescript
-public readonly commitGenerated: boolean;
-```
-
-- *Type:* boolean
-
-Whether to commit the managed files by default.
-
----
-
-##### `compileTask`<sup>Required</sup> <a name="compileTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.compileTask"></a>
-
-```typescript
-public readonly compileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `components`<sup>Required</sup> <a name="components" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.components"></a>
-
-```typescript
-public readonly components: Component[];
-```
-
-- *Type:* projen.Component[]
-
-Returns all the components within this project.
-
----
-
-##### `deps`<sup>Required</sup> <a name="deps" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.deps"></a>
-
-```typescript
-public readonly deps: Dependencies;
-```
-
-- *Type:* projen.Dependencies
-
-Project dependencies.
-
----
-
-##### `ejected`<sup>Required</sup> <a name="ejected" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.ejected"></a>
-
-```typescript
-public readonly ejected: boolean;
-```
-
-- *Type:* boolean
-
-Whether or not the project is being ejected.
-
----
-
-##### `files`<sup>Required</sup> <a name="files" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.files"></a>
-
-```typescript
-public readonly files: FileBase[];
-```
-
-- *Type:* projen.FileBase[]
-
-All files in this project.
-
----
-
-##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.gitattributes"></a>
-
-```typescript
-public readonly gitattributes: GitAttributesFile;
-```
-
-- *Type:* projen.GitAttributesFile
-
-The .gitattributes file for this repository.
-
----
-
-##### `gitignore`<sup>Required</sup> <a name="gitignore" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.gitignore"></a>
-
-```typescript
-public readonly gitignore: IgnoreFile;
-```
-
-- *Type:* projen.IgnoreFile
-
-.gitignore.
-
----
-
-##### `logger`<sup>Required</sup> <a name="logger" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.logger"></a>
-
-```typescript
-public readonly logger: Logger;
-```
-
-- *Type:* projen.Logger
-
-Logging utilities.
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
-Project name.
-
----
-
-##### `outdir`<sup>Required</sup> <a name="outdir" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.outdir"></a>
-
-```typescript
-public readonly outdir: string;
-```
-
-- *Type:* string
-
-Absolute output directory of this project.
-
----
-
-##### `packageTask`<sup>Required</sup> <a name="packageTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.packageTask"></a>
-
-```typescript
-public readonly packageTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.postCompileTask"></a>
-
-```typescript
-public readonly postCompileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.preCompileTask"></a>
-
-```typescript
-public readonly preCompileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.projectBuild"></a>
-
-```typescript
-public readonly projectBuild: ProjectBuild;
-```
-
-- *Type:* projen.ProjectBuild
-
-Manages the build process of the project.
-
----
-
-##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.projenCommand"></a>
-
-```typescript
-public readonly projenCommand: string;
-```
-
-- *Type:* string
-
-The command to use in order to run the projen CLI.
-
----
-
-##### `root`<sup>Required</sup> <a name="root" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.root"></a>
-
-```typescript
-public readonly root: Project;
-```
-
-- *Type:* projen.Project
-
-The root project.
-
----
-
-##### `subprojects`<sup>Required</sup> <a name="subprojects" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.subprojects"></a>
-
-```typescript
-public readonly subprojects: Project[];
-```
-
-- *Type:* projen.Project[]
-
-Returns all the subprojects within this project.
-
----
-
-##### `tasks`<sup>Required</sup> <a name="tasks" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.tasks"></a>
-
-```typescript
-public readonly tasks: Tasks;
-```
-
-- *Type:* projen.Tasks
-
-Project tasks.
-
----
-
-##### `testTask`<sup>Required</sup> <a name="testTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.testTask"></a>
-
-```typescript
-public readonly testTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.defaultTask"></a>
-
-```typescript
-public readonly defaultTask: Task;
-```
-
-- *Type:* projen.Task
-
-This is the "default" task, the one that executes "projen".
-
-Undefined if
-the project is being ejected.
-
----
-
-##### `initProject`<sup>Optional</sup> <a name="initProject" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.initProject"></a>
-
-```typescript
-public readonly initProject: InitProject;
-```
-
-- *Type:* projen.InitProject
-
-The options used when this project is bootstrapped via `projen new`.
-
-It
-includes the original set of options passed to the CLI and also the JSII
-FQN of the project type.
-
----
-
-##### `parent`<sup>Optional</sup> <a name="parent" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.parent"></a>
-
-```typescript
-public readonly parent: Project;
-```
-
-- *Type:* projen.Project
-
-A parent project.
-
-If undefined, this is the root project.
-
----
-
-##### `projectType`<sup>Required</sup> <a name="projectType" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.projectType"></a>
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-
----
-
-##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.autoApprove"></a>
-
-```typescript
-public readonly autoApprove: AutoApprove;
-```
-
-- *Type:* projen.github.AutoApprove
-
-Auto approve set up for this project.
-
----
-
-##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.devContainer"></a>
-
-```typescript
-public readonly devContainer: DevContainer;
-```
-
-- *Type:* projen.vscode.DevContainer
-
-Access for .devcontainer.json (used for GitHub Codespaces).
-
-This will be `undefined` if devContainer boolean is false
-
----
-
-##### `github`<sup>Optional</sup> <a name="github" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.github"></a>
-
-```typescript
-public readonly github: GitHub;
-```
-
-- *Type:* projen.github.GitHub
-
-Access all github components.
-
-This will be `undefined` for subprojects.
-
----
-
-##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.gitpod"></a>
-
-```typescript
-public readonly gitpod: Gitpod;
-```
-
-- *Type:* projen.Gitpod
-
-Access for Gitpod.
-
-This will be `undefined` if gitpod boolean is false
-
----
-
-##### `vscode`<sup>Optional</sup> <a name="vscode" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.vscode"></a>
-
-```typescript
-public readonly vscode: VsCode;
-```
-
-- *Type:* projen.vscode.VsCode
-
-Access all VSCode components.
-
-This will be `undefined` for subprojects.
-
----
-
-##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.allowLibraryDependencies"></a>
-
-- *Deprecated:* use `package.allowLibraryDependencies`
-
-```typescript
-public readonly allowLibraryDependencies: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.artifactsDirectory"></a>
-
-```typescript
-public readonly artifactsDirectory: string;
-```
-
-- *Type:* string
-
-The build output directory.
-
-An npm tarball will be created under the `js`
-subdirectory. For example, if this is set to `dist` (the default), the npm
-tarball will be placed under `dist/js/boom-boom-1.2.3.tg`.
-
----
-
-##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.artifactsJavascriptDirectory"></a>
-
-```typescript
-public readonly artifactsJavascriptDirectory: string;
-```
-
-- *Type:* string
-
-The location of the npm tarball after build (`${artifactsDirectory}/js`).
-
----
-
-##### `bundler`<sup>Required</sup> <a name="bundler" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.bundler"></a>
-
-```typescript
-public readonly bundler: Bundler;
-```
-
-- *Type:* projen.javascript.Bundler
-
----
-
-##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.entrypoint"></a>
-
-- *Deprecated:* use `package.entrypoint`
-
-```typescript
-public readonly entrypoint: string;
-```
-
-- *Type:* string
-
----
-
-##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.manifest"></a>
-
-- *Deprecated:* use `package.addField(x, y)`
-
-```typescript
-public readonly manifest: any;
-```
-
-- *Type:* any
-
----
-
-##### `npmrc`<sup>Required</sup> <a name="npmrc" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.npmrc"></a>
-
-```typescript
-public readonly npmrc: NpmConfig;
-```
-
-- *Type:* projen.javascript.NpmConfig
-
-The .npmrc file.
-
----
-
-##### `package`<sup>Required</sup> <a name="package" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.package"></a>
-
-```typescript
-public readonly package: NodePackage;
-```
-
-- *Type:* projen.javascript.NodePackage
-
-API for managing the node package.
-
----
-
-##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.packageManager"></a>
-
-- *Deprecated:* use `package.packageManager`
-
-```typescript
-public readonly packageManager: NodePackageManager;
-```
-
-- *Type:* projen.javascript.NodePackageManager
-
-The package manager to use.
-
----
-
-##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.runScriptCommand"></a>
-
-```typescript
-public readonly runScriptCommand: string;
-```
-
-- *Type:* string
-
-The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager).
-
----
-
-##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.autoMerge"></a>
-
-```typescript
-public readonly autoMerge: AutoMerge;
-```
-
-- *Type:* projen.github.AutoMerge
-
-Component that sets up mergify for merging approved pull requests.
-
----
-
-##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildWorkflow"></a>
-
-```typescript
-public readonly buildWorkflow: BuildWorkflow;
-```
-
-- *Type:* projen.build.BuildWorkflow
-
-The PR build GitHub workflow.
-
-`undefined` if `buildWorkflow` is disabled.
-
----
-
-##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.buildWorkflowJobId"></a>
-
-```typescript
-public readonly buildWorkflowJobId: string;
-```
-
-- *Type:* string
-
-The job ID of the build workflow.
-
----
-
-##### `jest`<sup>Optional</sup> <a name="jest" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.jest"></a>
-
-```typescript
-public readonly jest: Jest;
-```
-
-- *Type:* projen.javascript.Jest
-
-The Jest configuration (if enabled).
-
----
-
-##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.maxNodeVersion"></a>
-
-```typescript
-public readonly maxNodeVersion: string;
-```
-
-- *Type:* string
-
-Maximum node version required by this package.
-
----
-
-##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.minNodeVersion"></a>
-
-```typescript
-public readonly minNodeVersion: string;
-```
-
-- *Type:* string
-
-Minimum node.js version required by this package.
-
----
-
-##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.npmignore"></a>
-
-```typescript
-public readonly npmignore: IgnoreFile;
-```
-
-- *Type:* projen.IgnoreFile
-
-The .npmignore file.
-
----
-
-##### `prettier`<sup>Optional</sup> <a name="prettier" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.prettier"></a>
-
-```typescript
-public readonly prettier: Prettier;
-```
-
-- *Type:* projen.javascript.Prettier
-
----
-
-##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.publisher"></a>
-
-- *Deprecated:* use `release.publisher`.
-
-```typescript
-public readonly publisher: Publisher;
-```
-
-- *Type:* projen.release.Publisher
-
-Package publisher.
-
-This will be `undefined` if the project does not have a
-release workflow.
-
----
-
-##### `release`<sup>Optional</sup> <a name="release" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.release"></a>
-
-```typescript
-public readonly release: Release;
-```
-
-- *Type:* projen.release.Release
-
-Release management.
-
----
-
-##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.upgradeWorkflow"></a>
-
-```typescript
-public readonly upgradeWorkflow: UpgradeDependencies;
-```
-
-- *Type:* projen.javascript.UpgradeDependencies
-
-The upgrade workflow.
-
----
-
-##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.docsDirectory"></a>
-
-```typescript
-public readonly docsDirectory: string;
-```
-
-- *Type:* string
-
----
-
-##### `libdir`<sup>Required</sup> <a name="libdir" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.libdir"></a>
-
-```typescript
-public readonly libdir: string;
-```
-
-- *Type:* string
-
-The directory in which compiled .js files reside.
-
----
-
-##### `srcdir`<sup>Required</sup> <a name="srcdir" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.srcdir"></a>
-
-```typescript
-public readonly srcdir: string;
-```
-
-- *Type:* string
-
-The directory in which the .ts sources reside.
-
----
-
-##### `testdir`<sup>Required</sup> <a name="testdir" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.testdir"></a>
-
-```typescript
-public readonly testdir: string;
-```
-
-- *Type:* string
-
-The directory in which tests reside.
-
----
-
-##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfigDev"></a>
-
-```typescript
-public readonly tsconfigDev: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
-A typescript configuration file which covers all files (sources, tests, projen).
-
----
-
-##### `watchTask`<sup>Required</sup> <a name="watchTask" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.watchTask"></a>
-
-```typescript
-public readonly watchTask: Task;
-```
-
-- *Type:* projen.Task
-
-The "watch" task.
-
----
-
-##### `docgen`<sup>Optional</sup> <a name="docgen" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.docgen"></a>
-
-```typescript
-public readonly docgen: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `eslint`<sup>Optional</sup> <a name="eslint" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.eslint"></a>
-
-```typescript
-public readonly eslint: Eslint;
-```
-
-- *Type:* projen.javascript.Eslint
-
----
-
-##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfig"></a>
-
-```typescript
-public readonly tsconfig: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
----
-
-##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.tsconfigEslint"></a>
-
-```typescript
-public readonly tsconfigEslint: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
----
-
-#### Constants <a name="Constants" id="Constants"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#projen-github-action-typescript.GitHubActionTypeScriptProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
-
----
-
-##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="projen-github-action-typescript.GitHubActionTypeScriptProject.property.DEFAULT_TASK"></a>
-
-```typescript
-public readonly DEFAULT_TASK: string;
-```
-
-- *Type:* string
-
-The name of the default task (the task executed when `projen` is run without arguments).
-
-Normally
-this task should synthesize the project files.
-
----
 
 
 ## Enums <a name="Enums" id="Enums"></a>
