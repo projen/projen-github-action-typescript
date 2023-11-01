@@ -50,7 +50,7 @@
     "jest-junit": "^15",
     "jsii": "5.2.x",
     "jsii-diff": "^1.91.0",
-    "jsii-docgen": "^10.0.0",
+    "jsii-docgen": "^10.0.2",
     "jsii-pacmak": "^1.91.0",
     "jsii-rosetta": "5.2.x",
     "npm-check-updates": "^16",
