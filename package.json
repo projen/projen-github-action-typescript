@@ -49,7 +49,7 @@
     "jest-junit": "^15",
     "jsii": "5.2.x",
     "jsii-diff": "^1.98.0",
-    "jsii-docgen": "^10.4.8",
+    "jsii-docgen": "^10.4.9",
     "jsii-pacmak": "^1.98.0",
     "jsii-rosetta": "5.2.x",
     "projen": "0.81.11",
@@ -59,7 +59,7 @@
     "typescript": "5.2.x"
   },
   "peerDependencies": {
-    "projen": "^0.81.10"
+    "projen": "^0.81.11"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
