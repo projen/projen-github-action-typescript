@@ -59,7 +59,7 @@
     "typescript": "5.2.x"
   },
   "peerDependencies": {
-    "projen": "^0.84.10"
+    "projen": ">=0.81.11 <1"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
