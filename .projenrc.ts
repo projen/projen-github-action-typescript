@@ -45,4 +45,6 @@ const project = new cdk.JsiiProject({
   },
 });
 
+project.github?.actions.set('actions/upload-artifact@v4', 'actions/upload-artifact@v4.3.6');
+
 project.synth();
