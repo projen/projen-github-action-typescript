@@ -130,6 +130,11 @@ export enum RunsUsing {
   NODE_20 = 'node20',
 
   /**
+   * "node24"
+   */
+  NODE_24 = 'node24',
+
+  /**
    * "composite"
    */
   COMPOSITE = 'composite',
@@ -151,6 +156,7 @@ interface Runs {
    * - use `RunsUsing.NODE_12` for Node.js v12.
    * - use `RunsUsing.NODE_16` for Node.js v16.
    * - use `RunsUsing.NODE_20` for Node.js v20.
+   * - use `RunsUsing.NODE_24` for Node.js v24.
    *
    * For composite actions:
    * - use `RunsUsing.COMPOSITE`
