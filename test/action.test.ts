@@ -21,7 +21,7 @@ describe('GitHubActionTypeScriptProject', () => {
       defaultReleaseBranch: 'main',
       actionMetadata: {
         runs: {
-          using: RunsUsing.NODE_12,
+          using: RunsUsing.NODE_24,
           main: 'dist/index.js',
         },
         inputs: {
@@ -39,7 +39,7 @@ describe('GitHubActionTypeScriptProject', () => {
 
     const workflow = synthSnapshot(project)['action.yml'];
     expect(workflow).toContain(
-      'runs:\n  using: node12\n  main: dist/index.js',
+      'runs:\n  using: node24\n  main: dist/index.js',
     );
     expect(workflow).toContain(
       'inputs:\n  input1:\n    description: my first input',

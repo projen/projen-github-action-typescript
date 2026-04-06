@@ -13,6 +13,7 @@ const project = new cdk.JsiiProject({
   devDeps: ['fs-extra', '@types/fs-extra', 'glob'],
   jsiiVersion: '5.2.x',
   typescriptVersion: '5.2.x',
+  workflowNodeVersion: '24.x',
 
   autoApproveUpgrades: true,
   autoApproveOptions: { allowedUsernames: ['cdklabs-automation'] },
